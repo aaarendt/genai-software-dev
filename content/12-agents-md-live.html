@@ -1,0 +1,135 @@
+<section data-slide="12-agents-md-live"
+         aria-label="Slide 12: AGENTS.md — Ten Lines That Change How the Agent Behaves"
+         class="slide">
+
+  <div class="accent-bar"></div>
+  <div class="content">
+    <p class="eyebrow">Live demo</p>
+    <h1>AGENTS.md —<br>ten lines that change<br>how the agent behaves.</h1>
+    <div class="lines">
+      <div class="line-row">
+        <span class="tag">What</span>
+        <span class="line-text">What this project is</span>
+      </div>
+      <div class="line-row">
+        <span class="tag">Stack</span>
+        <span class="line-text">Preferred libraries</span>
+      </div>
+      <div class="line-row highlight">
+        <span class="tag">Key</span>
+        <span class="line-text">Timestamps are UTC unless stated</span>
+      </div>
+      <div class="line-row highlight">
+        <span class="tag">Key</span>
+        <span class="line-text">Don't add type hints unless asked</span>
+      </div>
+      <div class="line-row">
+        <span class="tag">Why</span>
+        <span class="line-text">Version-controlled — team asset, not personal preference</span>
+      </div>
+      <div class="line-row">
+        <span class="tag">Why</span>
+        <span class="line-text">Cross-vendor — the file travels with the code</span>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    section[data-slide="12-agents-md-live"] {
+      background: var(--uw-white);
+      padding: var(--space-8) var(--space-10) var(--space-8) var(--space-12);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="12-agents-md-live"] .accent-bar {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="12-agents-md-live"] .content {
+      max-width: 1300px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto 1fr;
+      column-gap: var(--space-10);
+      row-gap: var(--space-3);
+    }
+
+    section[data-slide="12-agents-md-live"] .eyebrow {
+      grid-column: 1;
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--uw-gray-70);
+      margin: 0;
+    }
+
+    section[data-slide="12-agents-md-live"] h1 {
+      grid-column: 1;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-spirit-purple);
+      margin: 0;
+    }
+
+    section[data-slide="12-agents-md-live"] .lines {
+      grid-column: 2;
+      grid-row: 1 / 4;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    section[data-slide="12-agents-md-live"] .line-row {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-3);
+      padding: var(--space-2) var(--space-3);
+      border-left: 3px solid var(--uw-gray-10);
+    }
+
+    section[data-slide="12-agents-md-live"] .line-row.highlight {
+      border-left-color: var(--uw-spirit-gold);
+      background: #fafaf0;
+    }
+
+    section[data-slide="12-agents-md-live"] .tag {
+      font-family: var(--font-display);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--uw-gray-70);
+      min-width: 3.5rem;
+      flex-shrink: 0;
+    }
+
+    section[data-slide="12-agents-md-live"] .line-row.highlight .tag {
+      color: var(--uw-heritage-gold);
+    }
+
+    section[data-slide="12-agents-md-live"] .line-text {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.7vw, 1.75rem);
+      color: var(--uw-gray-90);
+      line-height: 1.35;
+    }
+
+    section[data-slide="12-agents-md-live"] .line-row.highlight .line-text {
+      color: var(--uw-spirit-purple);
+      font-weight: 600;
+    }
+  </style>
+</section>

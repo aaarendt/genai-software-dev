@@ -1,0 +1,118 @@
+<section data-slide="05-six-pieces"
+         aria-label="Slide 5: Six Pieces"
+         class="slide">
+
+  <div class="accent-bar"></div>
+  <div class="content">
+    <h1>Six pieces.</h1>
+    <p class="sub">Every tool has all of them.</p>
+    <div class="grid">
+      <div class="piece">
+        <span class="num">01</span>
+        <span class="name">LLM backbone</span>
+      </div>
+      <div class="piece">
+        <span class="num">02</span>
+        <span class="name">Tool use</span>
+      </div>
+      <div class="piece">
+        <span class="num">03</span>
+        <span class="name">Agent loop</span>
+      </div>
+      <div class="piece">
+        <span class="num">04</span>
+        <span class="name">Project memory</span>
+      </div>
+      <div class="piece">
+        <span class="num">05</span>
+        <span class="name">MCP servers</span>
+      </div>
+      <div class="piece">
+        <span class="num">06</span>
+        <span class="name">Skills</span>
+      </div>
+    </div>
+    <p class="coda">Switching tools is a config exercise, not a re-learning exercise.</p>
+  </div>
+
+  <style>
+    section[data-slide="05-six-pieces"] {
+      background: var(--uw-white);
+      padding: var(--space-8) var(--space-10) var(--space-8) var(--space-12);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="05-six-pieces"] .accent-bar {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="05-six-pieces"] .content {
+      max-width: 1400px;
+      width: 100%;
+    }
+
+    section[data-slide="05-six-pieces"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--uw-spirit-purple);
+      margin: 0 0 var(--space-2) 0;
+    }
+
+    section[data-slide="05-six-pieces"] .sub {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.6vw, 1.625rem);
+      color: var(--uw-gray-70);
+      margin: 0 0 var(--space-8) 0;
+    }
+
+    section[data-slide="05-six-pieces"] .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4) var(--space-8);
+      margin-bottom: var(--space-8);
+    }
+
+    section[data-slide="05-six-pieces"] .piece {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-4);
+      padding: var(--space-4) 0;
+      border-bottom: 1px solid var(--uw-gray-10);
+    }
+
+    section[data-slide="05-six-pieces"] .num {
+      font-family: var(--font-display);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 900;
+      color: var(--uw-spirit-gold);
+      min-width: 2rem;
+      letter-spacing: 0.04em;
+    }
+
+    section[data-slide="05-six-pieces"] .name {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--uw-spirit-purple);
+    }
+
+    section[data-slide="05-six-pieces"] .coda {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.5vw, 1.5rem);
+      color: var(--uw-gray-70);
+      margin: 0;
+      font-style: italic;
+    }
+  </style>
+</section>

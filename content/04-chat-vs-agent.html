@@ -1,0 +1,93 @@
+<section data-slide="04-chat-vs-agent"
+         aria-label="Slide 4: Chat vs Agent"
+         class="slide">
+
+  <div class="content">
+    <div class="columns">
+      <div class="col">
+        <p class="label">Chat</p>
+        <p class="verb">Answers questions.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="col">
+        <p class="label">Agent</p>
+        <p class="verb">Reads your files.<br>Runs your code.<br>Edits your project.</p>
+      </div>
+    </div>
+    <p class="kicker">Same LLM underneath — different harness around it.</p>
+  </div>
+
+  <style>
+    section[data-slide="04-chat-vs-agent"] {
+      background: var(--uw-spirit-purple);
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-10);
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="04-chat-vs-agent"]::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="04-chat-vs-agent"] .content {
+      max-width: 1400px;
+      width: 100%;
+    }
+
+    section[data-slide="04-chat-vs-agent"] .columns {
+      display: grid;
+      grid-template-columns: 1fr 2px 1fr;
+      gap: var(--space-8);
+      margin-bottom: var(--space-8);
+      align-items: start;
+    }
+
+    section[data-slide="04-chat-vs-agent"] .divider {
+      background: var(--uw-spirit-gold);
+      opacity: 0.4;
+      align-self: stretch;
+    }
+
+    section[data-slide="04-chat-vs-agent"] .col {
+      padding: var(--space-8) 0;
+    }
+
+    section[data-slide="04-chat-vs-agent"] .label {
+      font-family: var(--font-display);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--uw-spirit-gold);
+      margin: 0 0 var(--space-4) 0;
+    }
+
+    section[data-slide="04-chat-vs-agent"] .verb {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3.75rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-white);
+      margin: 0;
+    }
+
+    section[data-slide="04-chat-vs-agent"] .kicker {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.8vw, 1.75rem);
+      font-weight: 400;
+      color: var(--uw-husky-gold-web);
+      text-align: center;
+      margin: 0;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: var(--space-8);
+    }
+  </style>
+</section>
