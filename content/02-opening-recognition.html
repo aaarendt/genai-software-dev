@@ -2,62 +2,60 @@
          aria-label="Slide 2: Opening Recognition"
          class="slide">
 
+  <div class="accent-bar-top"></div>
   <div class="content">
-    <p class="setup">Jupyter notebooks are used across many research domains.</p>
-    <p class="admission">I have many poorly formatted,<br>incomplete notebooks on my laptop right now.</p>
-    <p class="punchline">Expect you do too.</p>
+    <p class="lead">Many of us are using Generative AI is for code development.</p>
+    <p class="bridge">However, there are concerns about using gen-AI for scientific code. How do we ensure our results are robust and reproducible?</p>
+    <p class="anchor">Today we will take a messy existing Jupyter notebook and apply some generative AI methods to demonstrate a few best practices.</p>
   </div>
 
   <style>
     section[data-slide="02-opening-recognition"] {
       background: var(--uw-white);
       align-items: center;
-      justify-content: center;
-      padding: var(--space-10);
+      justify-content: flex-start;
+      padding: var(--space-10) var(--space-12);
       position: relative;
       overflow: hidden;
-      text-align: center;
-    }
-
-    section[data-slide="02-opening-recognition"]::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 8px;
-      background: var(--uw-spirit-gold);
     }
 
     section[data-slide="02-opening-recognition"] .content {
-      max-width: 1200px;
+      max-width: 1100px;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
     }
 
-    section[data-slide="02-opening-recognition"] .setup {
-      font-family: var(--font-body);
-      font-size: clamp(1.5rem, 2vw, 2rem);
-      font-weight: 400;
-      color: var(--uw-gray-70);
-      margin: 0 0 var(--space-10) 0;
-      line-height: 1.5;
-    }
-
-    section[data-slide="02-opening-recognition"] .admission {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 3.5rem);
-      font-weight: 800;
-      color: var(--uw-spirit-purple);
-      line-height: 1.15;
-      margin: 0 0 var(--space-8) 0;
-      letter-spacing: -0.01em;
-    }
-
-    section[data-slide="02-opening-recognition"] .punchline {
+    section[data-slide="02-opening-recognition"] .lead {
       font-family: var(--font-display);
       font-size: clamp(2rem, 3.5vw, 3.5rem);
       font-weight: 900;
-      color: var(--uw-heritage-gold);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.0;
+      color: var(--uw-spirit-purple);
       margin: 0;
-      letter-spacing: -0.01em;
+    }
+
+    section[data-slide="02-opening-recognition"] .bridge {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.8vw, 1.75rem);
+      font-weight: 400;
+      color: var(--uw-gray-70);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    section[data-slide="02-opening-recognition"] .anchor {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.8vw, 1.75rem);
+      font-weight: 600;
+      color: var(--uw-gray-90);
+      line-height: 1.5;
+      margin: 0;
+      padding-left: var(--space-6);
+      border-left: 4px solid var(--uw-spirit-gold);
     }
   </style>
 </section>

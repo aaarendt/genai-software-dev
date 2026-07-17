@@ -3,27 +3,33 @@
          class="slide">
 
   <div class="content">
-    <h1>Trained in <span class="vs">vs.</span> In the prompt.</h1>
+    <div class="header">
+      <p class="slide-title">What the model knows vs. what you tell it</p>
+      <h1>Built-in knowledge <span class="vs">vs.</span> In the prompt.</h1>
+    </div>
     <div class="columns">
       <div class="col">
-        <p class="col-label">Trained in</p>
+        <p class="col-label">Built-in knowledge</p>
         <ul>
-          <li>Python, common libraries</li>
-          <li>General patterns</li>
-          <li>When to stop</li>
+          <li><strong>Python and common libraries</strong> — the model has seen millions of lines of code and understands standard patterns, idioms, and APIs.</li>
+          <li><strong>General best practices</strong> — it knows how to structure a function, write a test, or refactor a loop without being told.</li>
+          <li><strong>When to stop</strong> — it has a sense of when a task is complete or when it needs more information before acting.</li>
         </ul>
-        <p class="col-note">You don't control this.</p>
+        <p class="col-note">You don't control this — it is fixed at training time and has a knowledge cutoff date.</p>
       </div>
       <div class="col-divider"></div>
       <div class="col">
         <p class="col-label">In the prompt</p>
         <ul>
-          <li>Your data's quirks</li>
-          <li>Your lab's conventions</li>
-          <li>Your specific goal</li>
+          <li><strong>Your data's quirks</strong> — the model has never seen your CSV headers, your variable naming conventions, or your domain vocabulary.</li>
+          <li><strong>Your lab's conventions</strong> — style guides, preferred libraries, and project structure exist nowhere in its training data.</li>
+          <li><strong>Your specific goal</strong> — what "done" looks like for this task is something only you can define.</li>
         </ul>
-        <p class="col-note highlight">You control this.</p>
+        <p class="col-note highlight">You control this. The prompt is your lever.</p>
       </div>
+    </div>
+    <div class="footer-note">
+      <p>Most of what people call "prompt engineering" is really just learning how to fill the right side of this diagram.</p>
     </div>
   </div>
 
@@ -50,12 +56,28 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: var(--space-6);
+      gap: var(--space-5);
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .slide-title {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.4vw, 1.5rem);
+      font-weight: 300;
+      color: var(--uw-husky-gold-web);
+      margin: 0;
+      text-transform: none;
+      letter-spacing: 0.02em;
     }
 
     section[data-slide="06-trained-in-vs-prompt"] h1 {
       font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      font-size: clamp(2rem, 3.2vw, 3.25rem);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: -0.02em;
@@ -83,7 +105,7 @@
 
     section[data-slide="06-trained-in-vs-prompt"] .col-label {
       font-family: var(--font-display);
-      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-size: clamp(1rem, 1.1vw, 1.125rem);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
@@ -95,16 +117,18 @@
       list-style: none;
       padding: 0;
       margin: 0 0 var(--space-3) 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
     }
 
     section[data-slide="06-trained-in-vs-prompt"] li {
       font-family: var(--font-body);
-      font-size: clamp(1.5rem, 1.8vw, 1.75rem);
+      font-size: clamp(1.5rem, 1.5vw, 1.625rem);
       color: var(--uw-husky-gold-web);
       line-height: 1.5;
       padding-left: 24px;
       position: relative;
-      margin-bottom: var(--space-1);
     }
 
     section[data-slide="06-trained-in-vs-prompt"] li::before {
@@ -114,16 +138,38 @@
       color: rgba(255,199,0,0.4);
     }
 
+    section[data-slide="06-trained-in-vs-prompt"] li strong {
+      color: var(--uw-white);
+      font-weight: 600;
+    }
+
     section[data-slide="06-trained-in-vs-prompt"] .col-note {
       font-family: var(--font-body);
-      font-size: clamp(1.375rem, 1.5vw, 1.5rem);
+      font-size: clamp(1.5rem, 1.3vw, 1.5rem);
       color: rgba(255,255,255,0.5);
       margin: 0;
+      font-style: italic;
     }
 
     section[data-slide="06-trained-in-vs-prompt"] .col-note.highlight {
       color: var(--uw-white);
       font-weight: 600;
+      font-style: normal;
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .footer-note {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: var(--space-3);
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .footer-note p {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.4vw, 1.5rem);
+      font-weight: 400;
+      color: var(--uw-husky-gold-web);
+      line-height: 1.6;
+      margin: 0;
+      font-style: italic;
     }
   </style>
 </section>

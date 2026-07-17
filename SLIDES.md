@@ -84,24 +84,6 @@ Render as two-column layout with the phrase as headline. This is the mental mode
   - What we're going to have the agent do: propose a plan, extract a module, and something interesting will happen along the way
   - Ties to the time series methods you saw earlier in the week — this is the engineering scaffolding those methods sit on
 
-## 08-context-is-everything
-
-- Key message: The quality of AI output is the quality of the context you provide.
-- Bullets:
-  - Scientists already have this skill: it's what research methodology is
-  - Bad context in typically leads to overconfident and potentially incorrect output
-  - Everything that follows is a way of getting more discipline into context
-
-## 09-know-your-mode
-
-- Bullets:
-  - Every coding agent has modes: ask, plan, edit, agent — named differently in each tool
-  - Where to look: in Copilot, the dropdown at the bottom of the chat pane; in Cursor, the mode selector next to the model name; in Claude Code, the mode is shown in your prompt line; in Windsurf, in the Cascade panel header
-  - "Please propose a plan — don't write code yet" is a polite request that the agent may ignore if it has permission to edit
-  - Safer default: read-only mode when planning; upgrade to agent mode when ready to execute
-  - If you can't tell what mode you're in, don't send the prompt yet
-- Note to self: 45 seconds. Show your own tool's mode indicator on screen while saying this. This slide exists because half the room will try this in Copilot's default agent mode on Monday morning and get a mess they didn't ask for.
-
 ## 10-demo-phase-1
 
 - Bullets:

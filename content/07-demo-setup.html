@@ -2,69 +2,90 @@
          aria-label="Slide 7: Demo Setup"
          class="slide">
 
-  <div class="accent-bar"></div>
+  <div class="accent-bar-left"></div>
   <div class="content">
-    <p class="eyebrow">What we're working with</p>
-    <h1>A messy notebook.<br>Weather station data.<br>We're going to refactor it.</h1>
-    <p class="aside"><strong>Refactor</strong> — reorganizing working code without changing what it does. Same inputs, same outputs, better shape.</p>
+    <h1>We will be refactoring a messy notebook that processes weather station data.</h1>
+    <ul>
+      <li>
+        <span class="label">What the notebook does</span>
+        <span class="detail">Load, clean, resample, forecast, and plot.</span>
+      </li>
+      <li>
+        <span class="label">Refactoring</span>
+        <span class="detail">Reorganizing working code without changing what it does — same inputs, same outputs, better shape.</span>
+      </li>
+      <li>
+        <span class="label">What we will ask the agent to do</span>
+        <span class="detail">Propose a plan, extract a module, and something interesting will happen along the way.</span>
+      </li>
+    </ul>
   </div>
 
   <style>
     section[data-slide="07-demo-setup"] {
       background: var(--uw-white);
-      padding: var(--space-8) var(--space-10) var(--space-8) var(--space-12);
+      padding: var(--space-8) var(--space-10) var(--space-8) calc(var(--space-12) + 8px);
       align-items: center;
       position: relative;
       overflow: hidden;
     }
 
-    section[data-slide="07-demo-setup"] .accent-bar {
-      position: absolute;
-      top: 0; left: 0; bottom: 0;
-      width: 8px;
-      background: var(--uw-spirit-gold);
-    }
-
     section[data-slide="07-demo-setup"] .content {
       max-width: 1200px;
       width: 100%;
-    }
-
-    section[data-slide="07-demo-setup"] .eyebrow {
-      font-family: var(--font-body);
-      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--uw-gray-70);
-      margin: 0 0 var(--space-3) 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
     }
 
     section[data-slide="07-demo-setup"] h1 {
       font-family: var(--font-display);
-      font-size: clamp(2rem, 3.8vw, 3.75rem);
+      font-size: clamp(2rem, 3vw, 3rem);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: -0.02em;
-      line-height: 1.05;
+      line-height: 1.0;
       color: var(--uw-spirit-purple);
-      margin: 0 0 var(--space-10) 0;
+      margin: 0;
     }
 
-    section[data-slide="07-demo-setup"] .aside {
+    section[data-slide="07-demo-setup"] ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    section[data-slide="07-demo-setup"] li {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: var(--space-6);
+      padding: var(--space-5) 0;
+      border-bottom: 1px solid var(--uw-gray-10);
+      align-items: baseline;
+    }
+
+    section[data-slide="07-demo-setup"] li:last-child {
+      border-bottom: none;
+    }
+
+    section[data-slide="07-demo-setup"] .label {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 1.3vw, 1.25rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--uw-spirit-purple);
+    }
+
+    section[data-slide="07-demo-setup"] .detail {
       font-family: var(--font-body);
-      font-size: clamp(1.5rem, 1.8vw, 1.75rem);
+      font-size: clamp(1.5rem, 1.6vw, 1.625rem);
+      font-weight: 400;
       color: var(--uw-gray-70);
       line-height: 1.5;
-      margin: 0;
-      padding: var(--space-6) var(--space-8);
-      border-left: 4px solid var(--uw-spirit-gold);
-      background: var(--uw-gray-10);
-    }
-
-    section[data-slide="07-demo-setup"] .aside strong {
-      color: var(--uw-spirit-purple);
-      font-weight: 700;
     }
   </style>
 </section>

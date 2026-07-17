@@ -2,18 +2,14 @@
          aria-label="Slide 1: Generative-AI for Software Development"
          class="slide">
 
-  <div class="title-wrap">
-    <img src="../assets/images/W-Logo_Purple_RGB.png"
-         alt="University of Washington"
-         class="logo">
+  <div class="title-layout">
+    <p class="institution">University of Washington · eScience Institute</p>
     <h1>Generative-AI<br>for Software<br>Development</h1>
-    <p class="context">AI-in-Practice Summer Institute · UW eScience Institute</p>
-    <div class="presenters">
-      <span>Anthony Arendt</span>
-      <span class="dot">·</span>
-      <span>Landung (Don) Setiawan</span>
+    <p class="context">AI-in-Practice Summer Institute</p>
+    <div class="meta">
+      <span class="presenters">Anthony Arendt &amp; Landung (Don) Setiawan</span>
+      <span class="date">July 29, 2026</span>
     </div>
-    <p class="date">July 29, 2026</p>
   </div>
 
   <style>
@@ -34,58 +30,68 @@
       background: var(--uw-spirit-gold);
     }
 
-    section[data-slide="01-title"] .title-wrap {
+    section[data-slide="01-title"]::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: rgba(255, 199, 0, 0.3);
+    }
+
+    section[data-slide="01-title"] .title-layout {
       text-align: center;
       max-width: 1100px;
       width: 100%;
     }
 
-    section[data-slide="01-title"] .logo {
-      height: 100px;
-      filter: brightness(0) invert(1);
-      display: block;
-      margin: 0 auto var(--space-10);
+    section[data-slide="01-title"] .institution {
+      font-family: var(--font-body);
+      font-size: clamp(1.125rem, 1.2vw, 1.25rem);
+      font-weight: 400;
+      color: var(--uw-spirit-gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0 0 var(--space-10) 0;
     }
 
     section[data-slide="01-title"] h1 {
       font-family: var(--font-display-wide);
-      font-size: clamp(2.5rem, 5.5vw, 5rem);
+      font-size: clamp(3rem, 6vw, 6rem);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: -0.02em;
-      line-height: 0.95;
+      line-height: 0.92;
       color: var(--uw-white);
       margin: 0 0 var(--space-8) 0;
     }
 
     section[data-slide="01-title"] .context {
       font-family: var(--font-body);
-      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
-      font-weight: 400;
-      color: var(--uw-spirit-gold);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-size: clamp(1.5rem, 1.8vw, 1.75rem);
+      font-weight: 300;
+      color: var(--uw-husky-gold-web);
       margin: 0 0 var(--space-10) 0;
+    }
+
+    section[data-slide="01-title"] .meta {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      align-items: center;
     }
 
     section[data-slide="01-title"] .presenters {
       font-family: var(--font-body);
-      font-size: clamp(1.5rem, 1.8vw, 1.75rem);
+      font-size: clamp(1.5rem, 1.6vw, 1.625rem);
       font-weight: 600;
       color: var(--uw-white);
-      margin-bottom: var(--space-3);
-    }
-
-    section[data-slide="01-title"] .dot {
-      color: var(--uw-spirit-gold);
-      margin: 0 var(--space-3);
     }
 
     section[data-slide="01-title"] .date {
       font-family: var(--font-body);
-      font-size: clamp(1.5rem, 1.5vw, 1.5rem);
-      color: var(--uw-husky-gold-web);
-      margin: 0;
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 400;
+      color: var(--uw-spirit-gold);
     }
   </style>
 </section>

@@ -4,45 +4,74 @@
 
   <div class="accent-bar"></div>
   <div class="content">
-    <p class="eyebrow">Act 1 · Live demo</p>
-    <h1>Ask for a plan.<br>Not code.</h1>
-    <div class="steps">
-      <div class="step">
-        <span class="step-num">01</span>
-        <div class="step-body">
-          <p class="step-label">Before you type</p>
-          <p class="step-text">Confirm you're in ask/plan mode — find the indicator on screen</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">02</span>
-        <div class="step-body">
-          <p class="step-label">The prompt</p>
-          <p class="step-text">Read the notebook, propose a refactor plan — no code yet</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">03</span>
-        <div class="step-body">
-          <p class="step-label">Watch for scope creep</p>
-          <p class="step-text">The plan will likely include things you didn't ask for</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">04</span>
-        <div class="step-body">
-          <p class="step-label">Push back visibly</p>
-          <p class="step-text">Edit the plan. It's a document you shape, not a formality.</p>
-        </div>
-      </div>
+    <p class="eyebrow">Step 1 · Live demo</p>
+    <h1>Asking for a Plan to Improve my Code</h1>
+
+    <div class="flowchart" aria-label="Flowchart of planning workflow">
+      <svg viewBox="0 0 900 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- ── Node 1: Set mode ── -->
+        <rect x="20" y="120" width="180" height="64" rx="8" fill="#4b2e83"/>
+        <text x="110" y="147" text-anchor="middle" font-family="'Encode Sans',sans-serif" font-weight="700" font-size="13" fill="white" text-transform="uppercase">SET MODE</text>
+        <text x="110" y="165" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="12" fill="#e8e3d3">Ask / Plan — not Agent</text>
+
+        <!-- arrow 1→2 -->
+        <line x1="200" y1="152" x2="244" y2="152" stroke="#ffc700" stroke-width="2"/>
+        <polygon points="244,147 254,152 244,157" fill="#ffc700"/>
+
+        <!-- ── Node 2: Send prompt ── -->
+        <rect x="254" y="120" width="180" height="64" rx="8" fill="#4b2e83"/>
+        <text x="344" y="147" text-anchor="middle" font-family="'Encode Sans',sans-serif" font-weight="700" font-size="13" fill="white">SEND PROMPT</text>
+        <text x="344" y="163" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="11" fill="#e8e3d3">Propose a refactor plan —</text>
+        <text x="344" y="177" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="11" fill="#e8e3d3">no code yet</text>
+
+        <!-- arrow 2→3 -->
+        <line x1="434" y1="152" x2="474" y2="152" stroke="#ffc700" stroke-width="2"/>
+        <polygon points="474,147 484,152 474,157" fill="#ffc700"/>
+
+        <!-- ── Node 3: Review plan ── -->
+        <rect x="484" y="120" width="180" height="64" rx="8" fill="#4b2e83"/>
+        <text x="574" y="147" text-anchor="middle" font-family="'Encode Sans',sans-serif" font-weight="700" font-size="13" fill="white">REVIEW PLAN</text>
+        <text x="574" y="163" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="11" fill="#e8e3d3">Check for scope creep</text>
+        <text x="574" y="177" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="11" fill="#e8e3d3">and unwanted additions</text>
+
+        <!-- arrow 3→diamond -->
+        <line x1="574" y1="184" x2="574" y2="216" stroke="#ffc700" stroke-width="2"/>
+        <polygon points="569,216 574,226 579,216" fill="#ffc700"/>
+
+        <!-- ── Decision diamond ── -->
+        <polygon points="574,226 634,263 574,300 514,263" fill="#ffc700"/>
+        <text x="574" y="258" text-anchor="middle" font-family="'Encode Sans',sans-serif" font-weight="800" font-size="13" fill="#4b2e83">Satisfied</text>
+        <text x="574" y="273" text-anchor="middle" font-family="'Encode Sans',sans-serif" font-weight="800" font-size="13" fill="#4b2e83">with plan?</text>
+
+        <!-- YES arrow → Node 4 -->
+        <line x1="634" y1="263" x2="700" y2="263" stroke="#4b2e83" stroke-width="2"/>
+        <polygon points="700,258 710,263 700,268" fill="#4b2e83"/>
+        <text x="663" y="256" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="11" font-weight="600" fill="#4b2e83">Yes</text>
+
+        <!-- ── Node 4: Approve ── -->
+        <rect x="710" y="231" width="170" height="64" rx="8" fill="#32006e"/>
+        <text x="795" y="258" text-anchor="middle" font-family="'Encode Sans',sans-serif" font-weight="700" font-size="13" fill="white">APPROVE PLAN</text>
+        <text x="795" y="275" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="11" fill="#e8e3d3">Proceed to Step 2</text>
+
+        <!-- NO arrow down then left back to Node 3 -->
+        <line x1="574" y1="300" x2="574" y2="340" stroke="#4b2e83" stroke-width="2"/>
+        <line x1="574" y1="340" x2="484" y2="340" stroke="#4b2e83" stroke-width="2"/>
+        <text x="524" y="358" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="13" font-weight="600" fill="#4b2e83">No — push back and edit the plan</text>
+        <!-- arrow back up into Node 3 bottom -->
+        <line x1="484" y1="340" x2="484" y2="184" stroke="#4b2e83" stroke-width="2"/>
+        <polygon points="479,184 484,174 489,184" fill="#4b2e83"/>
+
+      </svg>
     </div>
   </div>
 
   <style>
     section[data-slide="10-demo-phase-1"] {
       background: var(--uw-white);
-      padding: var(--space-8) var(--space-10) var(--space-8) var(--space-12);
+      padding: var(--space-6) var(--space-10) var(--space-6) var(--space-12);
       align-items: center;
+      justify-content: center;
       position: relative;
       overflow: hidden;
     }
@@ -57,75 +86,39 @@
     section[data-slide="10-demo-phase-1"] .content {
       max-width: 1300px;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
     }
 
     section[data-slide="10-demo-phase-1"] .eyebrow {
       font-family: var(--font-body);
-      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-size: clamp(1rem, 1.1vw, 1.125rem);
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--uw-gray-70);
-      margin: 0 0 var(--space-2) 0;
+      color: var(--uw-gray-50);
+      margin: 0;
     }
 
     section[data-slide="10-demo-phase-1"] h1 {
       font-family: var(--font-display);
-      font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+      font-size: clamp(1.75rem, 2.8vw, 3rem);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: -0.02em;
       line-height: 1.0;
       color: var(--uw-spirit-purple);
-      margin: 0 0 var(--space-6) 0;
-    }
-
-    section[data-slide="10-demo-phase-1"] .steps {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-3) var(--space-8);
-    }
-
-    section[data-slide="10-demo-phase-1"] .step {
-      display: flex;
-      gap: var(--space-4);
-      align-items: flex-start;
-      padding: var(--space-4) 0;
-      border-top: 1px solid var(--uw-gray-10);
-    }
-
-    section[data-slide="10-demo-phase-1"] .step-num {
-      font-family: var(--font-display);
-      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
-      font-weight: 900;
-      color: var(--uw-spirit-gold);
-      min-width: 2rem;
-      flex-shrink: 0;
-      padding-top: 2px;
-    }
-
-    section[data-slide="10-demo-phase-1"] .step-body {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    section[data-slide="10-demo-phase-1"] .step-label {
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem, 1.7vw, 1.625rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: -0.01em;
-      color: var(--uw-spirit-purple);
       margin: 0;
     }
 
-    section[data-slide="10-demo-phase-1"] .step-text {
-      font-family: var(--font-body);
-      font-size: clamp(1.5rem, 1.6vw, 1.625rem);
-      color: var(--uw-gray-70);
-      line-height: 1.4;
-      margin: 0;
+    section[data-slide="10-demo-phase-1"] .flowchart {
+      width: 100%;
+    }
+
+    section[data-slide="10-demo-phase-1"] .flowchart svg {
+      width: 100%;
+      height: auto;
     }
   </style>
 </section>
