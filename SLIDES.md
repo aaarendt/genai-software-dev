@@ -84,7 +84,7 @@ Render as two-column layout with the phrase as headline. This is the mental mode
   - What we're going to have the agent do: propose a plan, extract a module, and something interesting will happen along the way
   - Ties to the time series methods you saw earlier in the week — this is the engineering scaffolding those methods sit on
 
-## 10-demo-phase-1
+## 08-demo-phase-1
 
 - Bullets:
   - Confirm you're in ask/plan mode before typing anything — show the indicator on screen
@@ -94,7 +94,7 @@ Render as two-column layout with the phrase as headline. This is the mental mode
   - Push back visibly. Edit the plan. The plan is a document you shape, not a formality.
 - Note to self: When the plan comes back, point at any scope-creep additions on screen and name them — "See these `-> pd.DataFrame` arrows? Those are type hints. I didn't ask for them." This is the "trained to be over-helpful" pattern surfacing live. Slide stays up during the demo pause; talk over it.
 
-## 11-four-surfaces
+## 09-four-surfaces
 
 - Key message: Four places to shape agent behavior.
 - Bullets:
@@ -106,7 +106,7 @@ Render as two-column layout with the phrase as headline. This is the mental mode
   - Today we'll use the first one seriously and name the others
 - Note to self: Render as a 2x2 or four-column table with generous whitespace. The extra sentences per surface are speaker cues, not destined to be rendered on the slide; each row on screen should be terse. This is Section 3 of the wider curriculum compressed to a single slide — resist the urge to explain each one deeply beyond the one-example gloss.
 
-## 12-agents-md-live
+## 10-agents-md-live
 
 AGENTS.md typically has ten or so lines. This changes how the agent behaves.
 - Bullets:
@@ -118,7 +118,7 @@ AGENTS.md typically has ten or so lines. This changes how the agent behaves.
   - Cross-vendor convention — the file travels with the code
 - Note to self: Write the file live in the editor after this slide appears. Commit it. The UTC line seeds the bug in Act 3 — do not skip it. The "no type hints" line will land harder because the room just saw the agent add them uninvited.
 
-## 13-demo-phase-2
+## 11-demo-phase-2
 
 - Key message: Now extract the cleaning logic.
 - Bullets:
@@ -128,7 +128,7 @@ AGENTS.md typically has ten or so lines. This changes how the agent behaves.
   - When done: read the diff, not the chat
 - Note to self: The visible mode switch reinforces slide 09's point through action, not repetition. This is the phase where you show, physically, the act of reading a diff. Slow down. Zoom the terminal.
 
-## 14-read-the-diff
+## 12-read-the-diff
 
 - Key message: The chat is a claim. The diff is evidence.
 - Bullets:
@@ -137,7 +137,7 @@ AGENTS.md typically has ten or so lines. This changes how the agent behaves.
   - Re-run the code before you believe it
 - Note to self: This slide is a pause-and-repeat moment. Say the key message twice. It's the durable habit of the entire hour.
 
-## 15-reflection
+## 13-reflection
 
 - Key message: Nothing magical happened.
 - Bullets:
@@ -146,7 +146,7 @@ AGENTS.md typically has ten or so lines. This changes how the agent behaves.
   - Now: how do we know it didn't sneak in a bug?
 - Note to self: Bridge slide. 30 seconds. Sets up Act 3.
 
-## 16-demo-phase-3
+## 14-demo-phase-3
 
 - Key message: The bug was always there.
 - Bullets:
@@ -158,7 +158,7 @@ AGENTS.md typically has ten or so lines. This changes how the agent behaves.
   - Ask the agent to explain, then fix together
 - Note to self: This is the emotional peak of the hour. Do not rush. If the room is quiet, let it be quiet.
 
-## 17-plausible-code
+## 15-plausible-code
 
 - Key message: The agent produces plausible code. Your job is to verify.
 - Bullets:
@@ -167,7 +167,7 @@ AGENTS.md typically has ten or so lines. This changes how the agent behaves.
   - This is the shape of the responsibility that stays with the human researcher
 - Note to self: The core teaching beat of the whole hour. Set the key message in the largest type on the slide. Let it breathe.
 
-## 18-verification-practices
+## 16-verification-practices
 
 - Key message: Five habits.
 - Bullets:
@@ -178,7 +178,7 @@ AGENTS.md typically has ten or so lines. This changes how the agent behaves.
   - Push back — the agent is a coworker, not an oracle. Push back includes "no, you're in the wrong mode" or "no, you did more than I asked" — half of what looks like the agent going rogue is a permissions or scope problem.
 - Note to self: Render as five short phrases with generous vertical spacing, not a bulleted list. This is the practical takeaway most attendees will screenshot.
 
-## 19-reproducibility-tension
+## 17-reproducibility-tension
 
 - Key message: LLMs are stochastic. Science demands reproducibility.
 - Bullets:
@@ -187,7 +187,7 @@ AGENTS.md typically has ten or so lines. This changes how the agent behaves.
   - The resolution is not to give up on either side
 - Note to self: One beat of honesty. Move to the resolution on the next slide.
 
-## 20-reproducibility-resolution
+## 18-reproducibility-resolution
 
 - Key message: The process is not reproducible. The artifacts are.
 - Bullets:
@@ -197,7 +197,7 @@ AGENTS.md typically has ten or so lines. This changes how the agent behaves.
   - Log the model, version, and date in your methods section, the way you would any tool
 - Note to self: This is the slide that answers the concern most attendees came in with. Deliver it slowly.
 
-## 21-where-to-go-next
+## 19-where-to-go-next
 
 - Key message: Where to go next.
 - Bullets:
@@ -207,7 +207,7 @@ AGENTS.md typically has ten or so lines. This changes how the agent behaves.
   - Full reading list in the handout
 - Note to self: 90 seconds. Not a sales pitch — a map for the curious.
 
-## 22-handout
+## 20-handout
 
 - Key message: A checklist for Monday morning.
 - Bullets:
@@ -218,7 +218,7 @@ AGENTS.md typically has ten or so lines. This changes how the agent behaves.
   - Take the handout — or scan the QR code
 - Note to self: Show the handout on screen. If using QR, place it large and center. Q&A begins after this slide.
 
-## 23-closing
+## 21-closing
 
 - Key message: The agent is a coworker. Read the diff.
 - Note to self: Optional closing slide. Two sentences — nothing more. Leave it up during Q&A.
