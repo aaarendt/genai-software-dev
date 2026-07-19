@@ -34,31 +34,28 @@ Bracketed italics are stage directions. Blockquotes are near-verbatim narration 
 
 ### Slide 01 — Title *(0:00–0:00:30)*
 
-*[Walk to the front. Title slide up.]*
-
-Set expectations for tone. This is a change of pace from the rest of the week. The whole institute is about AI/ML as a research tool — models, methods, results. This one hour flips the frame: AI as a coworker inside the code you write to *do* the research. Different topic, same discipline.
-
-Two sentences of framing, then move on. The demo is the show.
+Welcome. Introduce Don by name and role: Principal Research Software Engineer with the Scientific Software Engineering Center at UW.
+Frame the session's place in the week generously: the institute is about AI/ML as a research tool, and LLMs — which you learned about earlier in the week — are the scaffolding for the generative-AI tools all of us are already using across a variety of tasks. This session is about best practices for using those tools in scientific research.
 
 ### Slide 02 — Opening recognition *(0:00:30–0:02)*
 
-*[Bring up the messy notebook on screen next to the slide.]*
+Anthony and Don work with researchers across campus and beyond, and we hear both excitement about gen AI's possibilities, as well as concerns about the potential pitfalls of Gen AI in research. The purpose of today is to provide best practices so that the science people do with Gen AI is robust and reproducible.
 
-The recognition move — many researchers have poorly formatted, incomplete notebooks on their laptop. I have a lot of these myself, and will show you one today. You're going to work on it together with the room.
-
-Wait for the acknowledgment in the room — nodding, small laughs. That signal is the point of this slide.
-
-Say something like: *today we're going to take one of these and apply some gen-AI methods to see what's possible in a short amount of time.*
+It's difficult to condense this training into a single hour, especially because the landscape around generative AI is shifting so rapidly  This is why we're demonstrating a few core concepts through a live notebook rather than surveying the field in slides.
 
 ### Slide 03 — 'This is not "AI writes your code."' *(0:02–0:02:30)*
 
-Quick expectation-setting, 30 seconds:
+Set the scenario: today we're working with an agent in an existing codebase — not writing something from scratch. This is a common situation researchers face: existing code that's a little messy, and we want to tidy it up. Generative AI is an ideal assistant for this kind of task.
 
-- This is not a demo where I say "build me a machine learning pipeline" and something perfect appears
-- The three acts of the hour: how it works, how you shape it, how you keep it trustworthy
-- Coworker, not oracle
+Establish the collaborative frame with researcher authority intact:
 
-Do not linger.
+Regard the agent as a co-worker who helps review and improve existing code
+We, the researchers, have the final say in this working relationship
+The agent is our assistant; we review and critically evaluate what it does
+
+Preview the arc as timing, not mystery: about 10 minutes of overview, then working with an agent to improve our code, then how to keep it trustworthy.
+
+Note: the "final say" line is doing structural work — it establishes researcher authority before the demo begins, which makes the verification lessons in Act 3 land more easily because the power relationship has been named upfront.
 
 ### Slide 04 — Chat vs. agent *(0:02:30–0:04:30)*
 
@@ -69,10 +66,6 @@ Talk through the harness idea: same underlying language model, but an *agent* is
 Watch the room. If people look confused about "harness," swap in "wrapper" or "runtime" — the specific word matters less than the concept landing.
 
 ### Slide 05 — Six pieces *(0:04:30–0:07)*
-
-The durable mental model for the whole hour. Take your time.
-
-If the slide is rendered as a diagram, point at each piece as you name it:
 
 - **LLM backbone** — the language model itself; the thing generating text
 - **Tool use** — the ability to read files, edit them, run commands
@@ -100,19 +93,11 @@ Everything in the next 45 minutes lives on the right-hand column. Say that out l
 
 *[Switch to the terminal/editor. Notebook is on screen.]*
 
-Walk the room through the notebook briefly: loads a CSV of hourly temperature data for Seattle-Tacoma, cleans it, resamples to daily, looks at the diurnal pattern, produces a naive forecast. It works. It runs. It's a mess.
+Walk the room through the notebook briefly: loads a CSV of hourly temperature data for Seattle-Tacoma, cleans it, resamples to daily, looks at the diurnal pattern, produces a naive forecast. It works and it runs, but it looks a bit messy.
 
-**Say the definition of refactor out loud even though it's obvious to you:**
+**Say the definition of refactor out loud:**
 
-> Quick side note in case that word isn't familiar — refactoring means reorganizing code without changing what it does. Same inputs, same outputs, better shape. It's one of the most common things you'd ask an agent to help with, and it's a good first task because you can check the answer: run the old version, run the new version, compare.
-
-Then state what the demo will do — **honest framing, no theatrical setup:**
-
-> We're going to have the agent do three things. Propose a plan. Extract a module. And help us verify our code.
-
-Tie back to the week:
-
-> Some of you did time series methods on Tuesday. This is the engineering scaffolding those methods sit on. Before you can fit an LSTM to weather data, someone has to write this notebook first, and someone has to clean it up. Today we're doing the cleaning-up part, together with an agent.
+> Quick side note in case that word isn't familiar: refactoring means reorganizing code without changing what it does. Same inputs, same outputs, better shape. It's one of the most common things you'd ask an agent to help with, and it's a good first task because you can check the answer: run the old version, run the new version, compare.
 
 ---
 
@@ -206,9 +191,9 @@ Read it back:
 
 **Point specifically at the UTC line** — this is the seed for Act 3 and needs to sit in the room's mind:
 
-> This line — *all timestamps in raw data files are UTC unless explicitly noted otherwise* — that's the kind of thing you'd only think to write down after being bitten by a timezone bug once. Which I have been. Many times.
+> This line — *all timestamps in raw data files are UTC unless explicitly noted otherwise* — that's the kind of thing that you as a weather researcher know is important to include, because you have lots of domain experience working with these types of datasets.
 
-Also note the "no type hints" line — lands harder because the room just saw the agent add them uninvited.
+Also note the "no type hints" line which is important to highlight because the room just saw the agent add them uninvited.
 
 *[Commit:]*
 
@@ -254,11 +239,9 @@ Read through:
 - `weather.py` — read each function briefly. Confirm docstrings are there. Confirm no type hints. Confirm no test file, no plot helpers.
 - Notebook — exploratory cells still there. Actual work now happens through function calls.
 
-**Say the phrase, and say it twice:**
+> The chat is a claim made by the agent that it did some specific thing, but the diff is the durable evidence evidence.
 
-> The chat is a claim. The diff is evidence.
-
-Then run the code — via `jupyter nbconvert --to notebook --execute` or by opening the notebook and running all cells. Same annual mean (~9°C), same daily plot shape, same forecast value.
+Then run all cells in the code. Same annual mean (~9°C), same daily plot shape, same forecast value.
 
 Commit:
 
@@ -289,11 +272,9 @@ Consolidate. Do not narrate through — let the slide breathe.
 
 *This block runs without a slide. Slide 11 stays up while you transition, then you go back to the notebook.*
 
-**This is the emotional peak of the hour. Do not rush any of it.**
-
 *[Return to the notebook. Open the diurnal profile plot — the "temperature by hour" bar chart.]*
 
-Point at the plot. **Wait — three or four seconds of silence.** Give the room a chance to see it.
+Point at the plot. **Wait** Give the room a chance to see it.
 
 Ask:
 
@@ -303,9 +284,7 @@ If someone speaks up, let them name it. If nobody does within about five seconds
 
 > The peak is at hour 23. The coldest hour is around 10. So according to this plot, Seattle-Tacoma is warmest at 11 PM and coldest at 10 AM.
 >
-> That's not a Seattle thing. That's a wrong thing.
-
-**Beat. Let it land.**
+> That's not how temperature typically varies in Seattle. This looks incorrect!
 
 Then the observation the room needs to hear:
 
@@ -315,7 +294,7 @@ Then the observation the room needs to hear:
 
 Frame the prompt aloud:
 
-> Notice how I'm framing this — I'm not saying "fix it." I'm saying "explain it." I want to understand before I let it change anything.
+> Notice how I'm framing this. I'm not saying "fix it." I'm saying "explain it." I want to understand before I let it change anything.
 
 *[Type:]*
 
@@ -337,11 +316,9 @@ Read the explanation. **Then the callback that makes the whole hour connect:**
 
 Agent applies a one-line fix — `.dt.tz_localize('UTC').dt.tz_convert('America/Los_Angeles')` after `pd.to_datetime`. Review the diff.
 
-**The localization beat:**
+> One line fixes everything. And notice that because the bug was localized inside a single function during the refactor, the fix is also localized. This is a payoff for having done the refactor properly. **The refactor made the code fixable.**
 
-> One line. That's the whole fix. And notice — because the bug was localized inside a single function during the refactor, the fix is also localized. This is a payoff for having done the refactor properly. **The refactor made the code fixable.**
-
-Re-run the notebook. Diurnal plot now peaks at hour 15. That's Seattle. Commit.
+Re-run the notebook. Diurnal plot now peaks at hour 15. That's correct for Seattle, so we can now commit.
 
 *[Look at the corrected plot for a second. Then advance to slide 12.]*
 
@@ -376,7 +353,6 @@ Then:
 >
 > Verification is not a safety check on a bad tool. **It is the responsibility that stays with the human researcher.**
 
-**Let the last sentence sit. Do not rush.** In a real room this is where a couple of people start writing in their notebooks. Give them the pause to do it.
 
 ### Slide 14 — Verification practices *(0:49–0:50:30)*
 
@@ -394,8 +370,6 @@ That kind of honesty about scope earns credibility with a research audience.
 ### Slide 15 — Reproducibility *(0:50:30–0:53)*
 
 *This is the slide that answers the concern most attendees came in with. Deliver it slowly.*
-
-Open with the tension — honestly, not rhetorically:
 
 > LLMs are stochastic. Science demands reproducibility. That tension is real, and I don't want to wave it away. "I used AI to help write my analysis" is not a reproducible methods description.
 
