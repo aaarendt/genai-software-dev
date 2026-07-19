@@ -81,7 +81,7 @@ Render as two-column layout with the phrase as headline. This is the mental mode
 - Bullets:
   - What the notebook does: load, clean, resample, forecast, plot
   - Defining terms: refactor means reorganizing working code without changing what it does. 
-  - What we're going to have the agent do: propose a plan, extract a module, and something interesting will happen along the way
+  - What we're going to have the agent do: propose a plan, extract a module, and help us verify our code.
   - Ties to the time series methods you saw earlier in the week — this is the engineering scaffolding those methods sit on
 
 ## 08-demo-phase-1
@@ -96,7 +96,7 @@ Render as two-column layout with the phrase as headline. This is the mental mode
 
 ## 09-four-surfaces
 
-- Key message: Four places to shape agent behavior.
+- Key message: Four Durable Places to Shape Agent Behavior.
 - Bullets:
   - Context documents (AGENTS.md) — always loaded on startup; the facts and conventions the agent should always have in hand when working in this project
   - Skills — task-triggered procedures; the agent picks them up when the work matches. Good for "when analyzing time series, always check for missing values and irregular sampling."
@@ -118,123 +118,62 @@ AGENTS.md typically has ten or so lines. This changes how the agent behaves.
   - Cross-vendor convention — the file travels with the code
 - Note to self: Write the file live in the editor after this slide appears. Commit it. The UTC line seeds the bug in Act 3 — do not skip it. The "no type hints" line will land harder because the room just saw the agent add them uninvited.
 
-## 11-demo-phase-2
+## 11-act2-recap
 
-- Key message: Now extract the cleaning logic.
+- Key message: The agent read your files, followed your plan, and edited your code. You supervised. That is the full shape of it.
 - Bullets:
-  - Switch to agent mode explicitly — show the indicator flip on screen
-  - Live prompt: follow the plan and extract cleaning into a module
-  - While it works: git as safety net — we committed before starting; `git restore .` is one-command undo
-  - When done: read the diff, not the chat
-- Note to self: The visible mode switch reinforces slide 09's point through action, not repetition. This is the phase where you show, physically, the act of reading a diff. Slow down. Zoom the terminal.
+  - We switched to agent mode, prompted it to extract the cleaning logic into a module, and it did exactly that
+  - The chat told us what the agent claims it changed, and the diff is where we confirmed it
+  - The code looks right, but we should verify it to be sure
+- Note to self: Recap slide — appears after the live demo, not during it. Let it breathe. The third bullet sets up Act 3 without telegraphing what's coming.
 
-## 12-read-the-diff
+## 12-bug-in-code
 
-- Key message: The chat is a claim. The diff is evidence.
+Key message: The agent preserved the bug faithfully. It didn't introduce it, but it also didn't catch it.
+Bullets:
 - Bullets:
-  - The agent's summary of what it did is not the same as what it did
-  - Read the diff every time — even when you trust the agent
-  - Re-run the code before you believe it
-- Note to self: This slide is a pause-and-repeat moment. Say the key message twice. It's the durable habit of the entire hour.
+- The bug was in the original notebook. The refactor moved the pandas operations verbatim.
+- Summary statistics were unaffected. Only the domain-informed look at the diurnal plot surfaced it.
+- The AGENTS.md convention we wrote earlier (timestamps are UTC) made the fix traceable rather than mysterious.
+This is the shape of the collaboration: the agent handles the code, you handle the domain.
 
-## 13-reflection
+## 13-plausible-code
 
-- Key message: Nothing magical happened.
+- Key message: Why do we need to verify our code?
 - Bullets:
-  - Agent read your files, wrote a plan, edited code, you supervised
-  - This is the shape of every session — you'll do it dozens of times
-  - Now: how do we know it didn't sneak in a bug?
-- Note to self: Bridge slide. 30 seconds. Sets up Act 3.
+  - This is not a question of whether the agent is trustworthy — it generally produces plausible, working code
+  - The agent does not know the specifics of our data — its quirks, its edge cases, its domain context
+  - It also lacks the scientific domain knowledge we bring as researchers — it cannot judge whether a result is physically reasonable or scientifically meaningful
+  - Verification is not a safety check on a bad tool. It is the responsibility that stays with the human researcher.
+- Note to self: The core teaching beat of the whole hour. Frame it as a genuine question the audience should be sitting with, not a verdict. Let the final point land in silence.
 
-## 14-demo-phase-3
+## 14-verification-practices
 
-- Key message: The bug was always there.
-- Bullets:
-  - Run the refactored code
-  - Compare a summary statistic against the original — they match
-  - But look at the "temperature by hour" plot — peak at 22-23 (reads as 10-11 PM), coldest at 10 (reads as 10 AM)
-  - Trace it: the notebook had a timezone bug, the refactor preserved it faithfully
-  - The AGENTS.md line about UTC (slide 12) is what makes the fix obvious rather than mysterious
-  - Ask the agent to explain, then fix together
-- Note to self: This is the emotional peak of the hour. Do not rush. If the room is quiet, let it be quiet.
-
-## 15-plausible-code
-
-- Key message: The agent produces plausible code. Your job is to verify.
-- Bullets:
-  - Not because the agent is untrustworthy in general
-  - But because it doesn't know what you know about your data
-  - This is the shape of the responsibility that stays with the human researcher
-- Note to self: The core teaching beat of the whole hour. Set the key message in the largest type on the slide. Let it breathe.
-
-## 16-verification-practices
-
-- Key message: Five habits.
+- Key message: There are multiple approaches. Today we used two.
 - Bullets:
   - Read the diff, not the chat
-  - Test-first when it matters — ask the agent to write the test before the code
-  - The [CITATION NEEDED] pattern — have the agent flag its own uncertainty; look for the absence of the marker
-  - Evals as a distinct practice — scored suites for agent behavior on your domain; further reading in the handout
   - Push back — the agent is a coworker, not an oracle. Push back includes "no, you're in the wrong mode" or "no, you did more than I asked" — half of what looks like the agent going rogue is a permissions or scope problem.
-- Note to self: Render as five short phrases with generous vertical spacing, not a bulleted list. This is the practical takeaway most attendees will screenshot.
+There are more advanced patterns — evals, test-first workflows, structured uncertainty flagging. The handout has starting points if you want to go deeper.
 
-## 17-reproducibility-tension
+## 15-reproducibility
 
-- Key message: LLMs are stochastic. Science demands reproducibility.
-- Bullets:
-  - This is a real tension, not a rhetorical one
-  - "I used AI to help write my analysis" is not a reproducible methods description
-  - The resolution is not to give up on either side
-- Note to self: One beat of honesty. Move to the resolution on the next slide.
+Key message: The conversation is scaffolding. The artifact is the science.
+Bullets:
+- LLMs are stochastic; science demands reproducibility. That tension is real. 
+- The resolution: the process isn't reproducible, however the artifacts are.
+- Your git repo, not your chat log, is the record.
+- You can optionally commit plans, review notes, and validation outputs alongside code. git log docs/ reads like a lab notebook.
+- it's good practice to log model, version, and date in your methods section, the way you'd cite any tool.
+- Pin your dependencies, because AI-generated code often assumes packages it didn't declare.
 
-## 18-reproducibility-resolution
+## 16-where-to-go-next
 
-- Key message: The process is not reproducible. The artifacts are.
-- Bullets:
-  - Your git repo — not your chat log — is the record
-  - Docs committed alongside code become an audit trail
-  - `git log docs/` reads like a lab notebook
-  - Log the model, version, and date in your methods section, the way you would any tool
-- Note to self: This is the slide that answers the concern most attendees came in with. Deliver it slowly.
+Key message: Write an AGENTS.md for one of your own projects. This week.
+Bullets (speaker cues):
 
-## 19-where-to-go-next
-
-- Key message: Where to go next.
-- Bullets:
-  - Skills as institutional memory for your lab
-  - Evals for anything you'll do more than three times
-  - MCP for connecting agents to real data sources
-  - Full reading list in the handout
-- Note to self: 90 seconds. Not a sales pitch — a map for the curious.
-
-## 20-handout
-
-- Key message: A checklist for Monday morning.
-- Bullets:
-  - Before you start
-  - While you're working
-  - Before you trust the output
-  - Warning signs
-  - Take the handout — or scan the QR code
-- Note to self: Show the handout on screen. If using QR, place it large and center. Q&A begins after this slide.
-
-## 21-closing
-
-- Key message: The agent is a coworker. Read the diff.
-- Note to self: Optional closing slide. Two sentences — nothing more. Leave it up during Q&A.
+Pick a project you're actively working on
+Ten lines is enough — conventions, preferences, what not to do
+Commit it to the repo so it travels with the code
+Then use an agent on that project once, and notice what changed
 
 ---
-
-## Notes
-
-To add a new slide:
-
-1. Add a `## slide-id` heading in the order you want
-2. Add your content notes under that heading
-3. Ask your LLM to generate the slide based on SLIDES.md
-4. Run `./build.sh` to build the presentation
-
-To reorder slides:
-
-1. Move the `## slide-id` headings around in this file
-2. Run `./build.sh` to rebuild

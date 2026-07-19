@@ -1,0 +1,101 @@
+<section data-slide="14-verification-practices"
+         aria-label="Slide 14: Verification Practices"
+         class="slide">
+
+  <div class="accent-bar"></div>
+  <div class="content">
+    <p class="eyebrow">Verification</p>
+    <h1>There are multiple approaches.<br>Today we used two.</h1>
+    <ul class="bullets">
+      <li><strong>Read the diff, not the chat.</strong> The chat tells you what the agent claims it changed. The diff is where you confirm it.</li>
+      <li><strong>Push back.</strong> The agent is a coworker, not an oracle. "No, you're in the wrong mode" and "no, you did more than I asked" are both valid pushback. Half of what looks like the agent going rogue is a permissions or scope problem.</li>
+    </ul>
+    <p class="coda">There are more advanced patterns — evals, test-first workflows, structured uncertainty flagging. The handout has starting points if you want to go deeper.</p>
+  </div>
+
+  <style>
+    section[data-slide="14-verification-practices"] {
+      background: var(--uw-white);
+      padding: var(--space-8) var(--space-10) var(--space-8) var(--space-12);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="14-verification-practices"] .accent-bar {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="14-verification-practices"] .content {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+
+    section[data-slide="14-verification-practices"] .eyebrow {
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--uw-gray-70);
+      margin: 0;
+    }
+
+    section[data-slide="14-verification-practices"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-spirit-purple);
+      margin: 0;
+    }
+
+    section[data-slide="14-verification-practices"] .bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    section[data-slide="14-verification-practices"] .bullets li {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.7vw, 1.75rem);
+      color: var(--uw-gray-90);
+      line-height: 1.5;
+      padding-left: 2rem;
+      position: relative;
+    }
+
+    section[data-slide="14-verification-practices"] .bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--uw-gray-30);
+    }
+
+    section[data-slide="14-verification-practices"] .bullets li strong {
+      color: var(--uw-spirit-purple);
+    }
+
+    section[data-slide="14-verification-practices"] .coda {
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.5rem);
+      color: var(--uw-gray-60);
+      line-height: 1.5;
+      font-style: italic;
+      border-top: 1px solid var(--uw-gray-10);
+      padding-top: var(--space-4);
+      margin: 0;
+    }
+  </style>
+</section>

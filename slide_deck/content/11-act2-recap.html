@@ -1,0 +1,115 @@
+<section data-slide="11-act2-recap"
+         aria-label="Slide 11: Act 2 Recap"
+         class="slide">
+
+  <div class="accent-bar"></div>
+  <div class="content">
+    <p class="eyebrow">What just happened</p>
+    <h1>The agent read your files,<br>followed your plan,<br>and edited your code.</h1>
+    <div class="beats">
+      <div class="beat">
+        <span class="beat-num">01</span>
+        <p class="beat-text">We switched to agent mode, prompted it to extract the cleaning logic into a module, and it did exactly that.</p>
+      </div>
+      <div class="beat">
+        <span class="beat-num">02</span>
+        <p class="beat-text">The chat tells you what the agent claims it changed. The diff is where you confirm it.</p>
+      </div>
+      <div class="beat beat--bridge">
+        <span class="beat-num">03</span>
+        <p class="beat-text">The code looks right. But we should verify it to be sure.</p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    section[data-slide="11-act2-recap"] {
+      background: var(--uw-white);
+      padding: var(--space-8) var(--space-10) var(--space-8) var(--space-12);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="11-act2-recap"] .accent-bar {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="11-act2-recap"] .content {
+      max-width: 1300px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    section[data-slide="11-act2-recap"] .eyebrow {
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--uw-gray-70);
+      margin: 0;
+    }
+
+    section[data-slide="11-act2-recap"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-spirit-purple);
+      margin: 0;
+    }
+
+    section[data-slide="11-act2-recap"] .beats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-2);
+    }
+
+    section[data-slide="11-act2-recap"] .beat {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      padding: var(--space-4);
+      border-top: 3px solid var(--uw-gray-10);
+    }
+
+    section[data-slide="11-act2-recap"] .beat--bridge {
+      border-top-color: var(--uw-spirit-gold);
+      background: #fafaf0;
+    }
+
+    section[data-slide="11-act2-recap"] .beat-num {
+      font-family: var(--font-display);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 900;
+      color: var(--uw-gray-30);
+      letter-spacing: 0.06em;
+    }
+
+    section[data-slide="11-act2-recap"] .beat--bridge .beat-num {
+      color: var(--uw-heritage-gold);
+    }
+
+    section[data-slide="11-act2-recap"] .beat-text {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.6vw, 1.625rem);
+      color: var(--uw-gray-90);
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    section[data-slide="11-act2-recap"] .beat--bridge .beat-text {
+      color: var(--uw-spirit-purple);
+      font-weight: 600;
+    }
+  </style>
+</section>

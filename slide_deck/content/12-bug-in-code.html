@@ -1,0 +1,99 @@
+<section data-slide="12-bug-in-code"
+         aria-label="Slide 12: Bug in Code"
+         class="slide">
+
+  <div class="accent-bar"></div>
+  <div class="content">
+    <p class="eyebrow">What just happened</p>
+    <h1>The agent preserved<br>the bug faithfully.</h1>
+    <ul class="bullets">
+      <li>The bug was in the original notebook. The refactor moved the pandas operations verbatim. It didn't introduce it, but it also didn't catch it.</li>
+      <li>Summary statistics were unaffected. Only your domain-informed look at the diurnal plot surfaced it.</li>
+      <li>The AGENTS.md convention we wrote earlier (timestamps are UTC) helped the agent find the fix quickly.</li>
+      <li class="anchor">This is the shape of the collaboration: the agent handles the code and you handle the domain.</li>
+    </ul>
+  </div>
+
+  <style>
+    section[data-slide="12-bug-in-code"] {
+      background: var(--uw-white);
+      padding: var(--space-8) var(--space-10) var(--space-8) var(--space-12);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="12-bug-in-code"] .accent-bar {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="12-bug-in-code"] .content {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    section[data-slide="12-bug-in-code"] .eyebrow {
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--uw-gray-70);
+      margin: 0;
+    }
+
+    section[data-slide="12-bug-in-code"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-spirit-purple);
+      margin: 0;
+    }
+
+    section[data-slide="12-bug-in-code"] .bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    section[data-slide="12-bug-in-code"] .bullets li {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.7vw, 1.75rem);
+      color: var(--uw-gray-90);
+      line-height: 1.5;
+      padding-left: 2rem;
+      position: relative;
+    }
+
+    section[data-slide="12-bug-in-code"] .bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--uw-gray-30);
+    }
+
+    section[data-slide="12-bug-in-code"] .bullets li.anchor {
+      color: var(--uw-spirit-purple);
+      font-weight: 600;
+      border-left: 4px solid var(--uw-spirit-gold);
+      padding-left: calc(2rem - 4px);
+      margin-top: var(--space-2);
+    }
+
+    section[data-slide="12-bug-in-code"] .bullets li.anchor::before {
+      content: none;
+    }
+  </style>
+</section>

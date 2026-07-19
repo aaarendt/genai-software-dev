@@ -1,0 +1,98 @@
+<section data-slide="16-where-to-go-next"
+         aria-label="Slide 16: Where to Go Next"
+         class="slide">
+
+  <div class="content">
+    <p class="eyebrow">Your next step</p>
+    <h1>Write an AGENTS.md<br>for one of your own<br>projects. This week.</h1>
+    <ul class="steps">
+      <li>Pick a project you are actively working on.</li>
+      <li>Ten lines is enough — conventions, preferences, what not to do.</li>
+      <li>Commit it to the repo so it travels with the code.</li>
+      <li>Then use an agent on that project once, and notice what changed.</li>
+    </ul>
+  </div>
+
+  <style>
+    section[data-slide="16-where-to-go-next"] {
+      background: var(--uw-spirit-purple);
+      padding: var(--space-8) var(--space-16) var(--space-8) var(--space-16);
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="16-where-to-go-next"]::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="16-where-to-go-next"] .content {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+
+    section[data-slide="16-where-to-go-next"] .eyebrow {
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--uw-husky-gold-web);
+      margin: 0;
+      opacity: 0.8;
+    }
+
+    section[data-slide="16-where-to-go-next"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-white);
+      margin: 0;
+    }
+
+    section[data-slide="16-where-to-go-next"] .steps {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      border-top: 1px solid rgba(255, 199, 0, 0.3);
+      padding-top: var(--space-5);
+      counter-reset: step-counter;
+    }
+
+    section[data-slide="16-where-to-go-next"] .steps li {
+      counter-increment: step-counter;
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.7vw, 1.75rem);
+      color: var(--uw-husky-gold-web);
+      line-height: 1.5;
+      padding-left: 3rem;
+      position: relative;
+    }
+
+    section[data-slide="16-where-to-go-next"] .steps li::before {
+      content: counter(step-counter, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1vw, 1rem);
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      color: rgba(255, 199, 0, 0.5);
+      top: 0.35em;
+    }
+  </style>
+</section>
