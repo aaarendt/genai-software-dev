@@ -1,0 +1,2112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="University of Washington Presentation">
+  <meta name="author" content="University of Washington">
+  <title>UW Presentation</title>
+
+  <!-- Encode Sans Local Fonts (Normal, Wide, Compressed variants) -->
+  <style>
+    /* Encode Sans Normal */
+    @font-face { font-family: 'Encode Sans'; font-weight: 100; src: url('../assets/fonts/EncodeSansNormal-100-Thin.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans'; font-weight: 200; src: url('../assets/fonts/EncodeSansNormal-200-ExtraLight.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans'; font-weight: 300; src: url('../assets/fonts/EncodeSansNormal-300-Light.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans'; font-weight: 400; src: url('../assets/fonts/EncodeSansNormal-400-Regular.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans'; font-weight: 500; src: url('../assets/fonts/EncodeSansNormal-500-Medium.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans'; font-weight: 600; src: url('../assets/fonts/EncodeSansNormal-600-SemiBold.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans'; font-weight: 700; src: url('../assets/fonts/EncodeSansNormal-700-Bold.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans'; font-weight: 800; src: url('../assets/fonts/EncodeSansNormal-800-ExtraBold.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans'; font-weight: 900; src: url('../assets/fonts/EncodeSansNormal-900-Black.ttf') format('truetype'); font-display: swap; }
+
+    /* Encode Sans Wide */
+    @font-face { font-family: 'Encode Sans Wide'; font-weight: 100; src: url('../assets/fonts/EncodeSansWide-100-Thin.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Wide'; font-weight: 200; src: url('../assets/fonts/EncodeSansWide-200-ExtraLight.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Wide'; font-weight: 300; src: url('../assets/fonts/EncodeSansWide-300-Light.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Wide'; font-weight: 400; src: url('../assets/fonts/EncodeSansWide-400-Regular.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Wide'; font-weight: 500; src: url('../assets/fonts/EncodeSansWide-500-Medium.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Wide'; font-weight: 600; src: url('../assets/fonts/EncodeSansWide-600-SemiBold.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Wide'; font-weight: 700; src: url('../assets/fonts/EncodeSansWide-700-Bold.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Wide'; font-weight: 800; src: url('../assets/fonts/EncodeSansWide-800-ExtraBold.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Wide'; font-weight: 900; src: url('../assets/fonts/EncodeSansWide-900-Black.ttf') format('truetype'); font-display: swap; }
+
+    /* Encode Sans Compressed */
+    @font-face { font-family: 'Encode Sans Compressed'; font-weight: 100; src: url('../assets/fonts/EncodeSansCompressed-100-Thin.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Compressed'; font-weight: 200; src: url('../assets/fonts/EncodeSansCompressed-200-ExtraLight.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Compressed'; font-weight: 300; src: url('../assets/fonts/EncodeSansCompressed-300-Light.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Compressed'; font-weight: 400; src: url('../assets/fonts/EncodeSansCompressed-400-Regular.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Compressed'; font-weight: 500; src: url('../assets/fonts/EncodeSansCompressed-500-Medium.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Compressed'; font-weight: 600; src: url('../assets/fonts/EncodeSansCompressed-600-SemiBold.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Compressed'; font-weight: 700; src: url('../assets/fonts/EncodeSansCompressed-700-Bold.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Compressed'; font-weight: 800; src: url('../assets/fonts/EncodeSansCompressed-800-ExtraBold.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Encode Sans Compressed'; font-weight: 900; src: url('../assets/fonts/EncodeSansCompressed-900-Black.ttf') format('truetype'); font-display: swap; }
+  </style>
+
+  <!-- Open Sans from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── DESIGN TOKENS ──────────────────────────────────────────────────── */
+
+    :root {
+      /* Primary Brand Colors */
+      --uw-husky-purple:   #32006e;
+      --uw-spirit-purple:  #4b2e83;
+      --uw-spirit-gold:    #ffc700;
+      --uw-husky-gold-web: #e8e3d3;
+      --uw-heritage-gold:  #85754d;
+
+      /* Accent Colors */
+      --uw-accent-green:   #aadb1e;
+      --uw-accent-teal:    #2ad2c9;
+      --uw-accent-pink:    #e93cac;
+      --uw-accent-lavender:#c5b4e3;
+
+      /* Neutrals */
+      --uw-white:          #ffffff;
+      --uw-black:          #000000;
+      --uw-gray-90:        #1a1a1a;
+      --uw-gray-70:        #4d4d4d;
+      --uw-gray-50:        #808080;
+      --uw-gray-30:        #b3b3b3;
+      --uw-gray-10:        #e6e6e6;
+
+      /* Font families */
+      --font-display:      'Encode Sans', sans-serif;
+      --font-display-wide: 'Encode Sans Wide', sans-serif;
+      --font-display-compressed: 'Encode Sans Compressed', sans-serif;
+      --font-body:         'Open Sans', sans-serif;
+
+      /* Spacing tokens (based on 8px grid) */
+      --space-1:   8px;
+      --space-2:  16px;
+      --space-3:  24px;
+      --space-4:  32px;
+      --space-5:  40px;
+      --space-6:  48px;
+      --space-7:  56px;
+      --space-8:  64px;
+      --space-10: 80px;
+      --space-12: 96px;
+
+      /* Border radius */
+      --radius-sm:   2px;
+      --radius-md:   4px;
+      --radius-lg:   8px;
+
+      /* Shadows */
+      --shadow-sm:  0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md:  0 4px 16px rgba(50,0,110,0.12);
+      --shadow-lg:  0 8px 32px rgba(50,0,110,0.18);
+    }
+
+    /* ─── BASE STYLES ────────────────────────────────────────────────────── */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      background: #000;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─── SLIDE SYSTEM ───────────────────────────────────────────────────── */
+
+    section.slide {
+      width: 100vw;
+      height: 100vh;
+      display: none;
+      position: relative;
+    }
+
+    section.slide.active {
+      display: flex;
+    }
+
+    /* ─── UTILITY CLASSES (Available to all slides) ──────────────────────── */
+
+    .accent-bar-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: var(--uw-spirit-gold);
+      z-index: 10;
+    }
+
+    .accent-bar-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: var(--uw-spirit-gold);
+      z-index: 10;
+    }
+
+    .accent-bar-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 8px;
+      background: var(--uw-spirit-gold);
+      z-index: 10;
+    }
+
+    .accent-bar-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 8px;
+      background: var(--uw-spirit-gold);
+      z-index: 10;
+    }
+
+    /* Screen reader only content */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  </style>
+</head>
+<body>
+<section data-slide="01-title"
+         aria-label="Slide 1: Generative-AI for Software Development"
+         class="slide">
+
+  <div class="title-layout">
+    <p class="institution">University of Washington · eScience Institute</p>
+    <h1>Generative-AI<br>for Software<br>Development</h1>
+    <p class="context">AI-in-Practice Summer Institute</p>
+    <div class="meta">
+      <span class="presenters">Anthony Arendt &amp; Landung (Don) Setiawan</span>
+      <span class="date">July 29, 2026</span>
+    </div>
+  </div>
+
+  <style>
+    section[data-slide="01-title"] {
+      background: var(--uw-spirit-purple);
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-10);
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="01-title"]::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="01-title"]::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: rgba(255, 199, 0, 0.3);
+    }
+
+    section[data-slide="01-title"] .title-layout {
+      text-align: center;
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    section[data-slide="01-title"] .institution {
+      font-family: var(--font-body);
+      font-size: clamp(1.125rem, 1.2vw, 1.25rem);
+      font-weight: 400;
+      color: var(--uw-spirit-gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0 0 var(--space-10) 0;
+    }
+
+    section[data-slide="01-title"] h1 {
+      font-family: var(--font-display-wide);
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.92;
+      color: var(--uw-white);
+      margin: 0 0 var(--space-8) 0;
+    }
+
+    section[data-slide="01-title"] .context {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.8vw, 1.75rem);
+      font-weight: 300;
+      color: var(--uw-husky-gold-web);
+      margin: 0 0 var(--space-10) 0;
+    }
+
+    section[data-slide="01-title"] .meta {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      align-items: center;
+    }
+
+    section[data-slide="01-title"] .presenters {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.6vw, 1.625rem);
+      font-weight: 600;
+      color: var(--uw-white);
+    }
+
+    section[data-slide="01-title"] .date {
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 400;
+      color: var(--uw-spirit-gold);
+    }
+  </style>
+</section>
+<section data-slide="02-opening-recognition"
+         aria-label="Slide 2: Opening Recognition"
+         class="slide">
+
+  <div class="accent-bar-top"></div>
+  <div class="content">
+    <p class="lead">Many of us are using Generative AI is for code development.</p>
+    <p class="bridge">However, there are concerns about using gen-AI for scientific code. How do we ensure our results are robust and reproducible?</p>
+    <p class="anchor">Today we will take a messy existing Jupyter notebook and apply some generative AI methods to demonstrate a few best practices.</p>
+  </div>
+
+  <style>
+    section[data-slide="02-opening-recognition"] {
+      background: var(--uw-white);
+      align-items: center;
+      justify-content: flex-start;
+      padding: var(--space-10) var(--space-12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="02-opening-recognition"] .content {
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
+    }
+
+    section[data-slide="02-opening-recognition"] .lead {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.0;
+      color: var(--uw-spirit-purple);
+      margin: 0;
+    }
+
+    section[data-slide="02-opening-recognition"] .bridge {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.8vw, 1.75rem);
+      font-weight: 400;
+      color: var(--uw-gray-70);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    section[data-slide="02-opening-recognition"] .anchor {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.8vw, 1.75rem);
+      font-weight: 600;
+      color: var(--uw-gray-90);
+      line-height: 1.5;
+      margin: 0;
+      padding-left: var(--space-6);
+      border-left: 4px solid var(--uw-spirit-gold);
+    }
+  </style>
+</section>
+<section data-slide="03-what-this-hour-is-not"
+         aria-label="Slide 3: What This Hour Is Not"
+         class="slide">
+
+  <div class="accent-bar-left"></div>
+  <div class="content">
+    <h1>Working with an agent in a codebase</h1>
+    <ul>
+      <li>We will regard the agent as a coworker who helps us review and improve existing code, rather than building from scratch.</li>
+      <li>Three sections: overview of key concpets, directing an agent to improve your code, and exploring how to keep it trustworthy.</li>
+    </ul>
+  </div>
+
+  <style>
+    section[data-slide="03-what-this-hour-is-not"] {
+      background: var(--uw-white);
+      padding: var(--space-10) var(--space-10) var(--space-10) calc(var(--space-12) + 8px);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="03-what-this-hour-is-not"] .content {
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    section[data-slide="03-what-this-hour-is-not"] .eyebrow {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.8vw, 1.75rem);
+      font-weight: 400;
+      color: var(--uw-gray-50);
+      margin: 0 0 var(--space-6) 0;
+      line-height: 1.5;
+    }
+
+    section[data-slide="03-what-this-hour-is-not"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.0;
+      color: var(--uw-spirit-purple);
+      margin: 0 0 var(--space-8) 0;
+    }
+
+    section[data-slide="03-what-this-hour-is-not"] ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    section[data-slide="03-what-this-hour-is-not"] li {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.8vw, 1.75rem);
+      line-height: 1.5;
+      color: var(--uw-gray-70);
+      padding-left: var(--space-5);
+      position: relative;
+    }
+
+    section[data-slide="03-what-this-hour-is-not"] li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 10px;
+      height: 3px;
+      background: var(--uw-spirit-gold);
+    }
+  </style>
+</section>
+<section data-slide="04-chat-vs-agent"
+         aria-label="Slide 4: Chat vs Agent"
+         class="slide">
+
+  <div class="accent-bar-top"></div>
+  <h2 class="slide-title">Differences Between Chat and Agent</h2>
+  <div class="layout">
+    <div class="col chat">
+      <p class="label">Chat</p>
+      <p class="action">Answers<br>questions.</p>
+    </div>
+    <div class="divider"></div>
+    <div class="col agent">
+      <p class="label">Agent</p>
+      <p class="action">Reads your files,<br>runs your code,<br>edits your project.</p>
+    </div>
+  </div>
+  <div class="harness-callout">
+    <p class="harness-label">What is a harness?</p>
+    <p class="harness-body">A harness is the surrounding system — the file access, tool permissions, and execution environment wrapped around the model. Saying "I'm using Claude" is under-specified: browser Claude, Claude Code, and Claude in VS Code all share the same underlying model but have completely different harnesses. The harness is what has changed most in the last two years, and it determines what AI can actually do on your behalf.</p>
+  </div>
+
+  <style>
+    section[data-slide="04-chat-vs-agent"] {
+      background: var(--uw-spirit-purple);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-10);
+      position: relative;
+      overflow: hidden;
+      gap: var(--space-6);
+    }
+
+    section[data-slide="04-chat-vs-agent"] .slide-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 2.2vw, 2.5rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--uw-spirit-gold);
+      margin: 0;
+      max-width: 1300px;
+      width: 100%;
+    }
+
+    section[data-slide="04-chat-vs-agent"] .layout {
+      display: grid;
+      grid-template-columns: 1fr 2px 1fr;
+      gap: var(--space-6);
+      max-width: 1300px;
+      width: 100%;
+      align-items: center;
+    }
+
+    section[data-slide="04-chat-vs-agent"] .divider {
+      background: rgba(255, 199, 0, 0.35);
+      align-self: stretch;
+      min-height: 100px;
+    }
+
+    section[data-slide="04-chat-vs-agent"] .col {
+      padding: var(--space-3) 0;
+    }
+
+    section[data-slide="04-chat-vs-agent"] .label {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.1vw, 1.125rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--uw-spirit-gold);
+      margin: 0 0 var(--space-2) 0;
+    }
+
+    section[data-slide="04-chat-vs-agent"] .action {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.2vw, 2.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-white);
+      margin: 0;
+    }
+
+    section[data-slide="04-chat-vs-agent"] .chat .action {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    section[data-slide="04-chat-vs-agent"] .harness-callout {
+      max-width: 1300px;
+      width: 100%;
+      border-left: 4px solid var(--uw-spirit-gold);
+      padding: var(--space-4) var(--space-5);
+      background: rgba(255, 199, 0, 0.06);
+    }
+
+    section[data-slide="04-chat-vs-agent"] .harness-label {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.1vw, 1.125rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--uw-spirit-gold);
+      margin: 0 0 var(--space-2) 0;
+    }
+
+    section[data-slide="04-chat-vs-agent"] .harness-body {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.7vw, 1.875rem);
+      font-weight: 400;
+      color: var(--uw-husky-gold-web);
+      line-height: 1.6;
+      margin: 0;
+    }
+  </style>
+</section>
+<section data-slide="05-six-pieces"
+         aria-label="Slide 5: Six Pieces"
+         class="slide">
+
+  <div class="accent-bar-left"></div>
+  <div class="content">
+    <div class="header">
+      <h1>Every AI coding assistant has all of these six components.</h1>
+    </div>
+    <div class="grid">
+
+      <div class="piece">
+        <div class="piece-id">
+          <svg class="icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <!-- neural network: 2 input, 1 middle, 2 output nodes -->
+            <circle cx="5" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+            <circle cx="5" cy="22" r="3" stroke="currentColor" stroke-width="2"/>
+            <circle cx="16" cy="16" r="3" stroke="currentColor" stroke-width="2"/>
+            <circle cx="27" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+            <circle cx="27" cy="22" r="3" stroke="currentColor" stroke-width="2"/>
+            <line x1="8" y1="10" x2="13" y2="16" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="8" y1="22" x2="13" y2="16" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="19" y1="16" x2="24" y2="10" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="19" y1="16" x2="24" y2="22" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span class="name">LLM backbone</span>
+        </div>
+        <p class="desc">The language model itself — the reasoning engine that turns prompts into text, code, and plans. Every AI tool you use is built on top of one.</p>
+      </div>
+
+      <div class="piece">
+        <div class="piece-id">
+          <svg class="icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <!-- wrench -->
+            <circle cx="9" cy="9" r="5.5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="9" cy="9" r="2" fill="currentColor"/>
+            <line x1="13.5" y1="13.5" x2="26" y2="26" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <line x1="23" y1="29" x2="29" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="name">Tool use</span>
+        </div>
+        <p class="desc">The ability to read files, edit them, and run shell commands on your machine. Without tool use the model can only talk; with it the model can act.</p>
+      </div>
+
+      <div class="piece">
+        <div class="piece-id">
+          <svg class="icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <!-- circular arrow loop -->
+            <path d="M27 16A11 11 0 1 0 16 27" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <polyline points="12,27 16,27 16,23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="name">Agent loop</span>
+        </div>
+        <p class="desc">The software that decides whether to call another tool or return a result to you. It turns a single prompt into a sequence of goal-directed actions.</p>
+      </div>
+
+      <div class="piece">
+        <div class="piece-id">
+          <svg class="icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <!-- document with dog-eared corner and text lines -->
+            <path d="M7 3h13l7 7v19H7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M20 3v7h7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <line x1="11" y1="16" x2="21" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="11" y1="20" x2="21" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="11" y1="24" x2="17" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span class="name">Project memory</span>
+        </div>
+        <p class="desc">A file the agent reads on startup so it knows your codebase, conventions, and working style. You write it once; every session starts with that context already loaded.</p>
+      </div>
+
+      <div class="piece">
+        <div class="piece-id">
+          <svg class="icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <!-- server rack: three stacked rectangles with status light -->
+            <rect x="3" y="5" width="26" height="6" rx="1.5" stroke="currentColor" stroke-width="2"/>
+            <rect x="3" y="13" width="26" height="6" rx="1.5" stroke="currentColor" stroke-width="2"/>
+            <rect x="3" y="21" width="26" height="6" rx="1.5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="25.5" cy="8" r="1.5" fill="currentColor"/>
+            <circle cx="25.5" cy="16" r="1.5" fill="currentColor"/>
+            <circle cx="25.5" cy="24" r="1.5" fill="currentColor"/>
+          </svg>
+          <span class="name">MCP servers</span>
+        </div>
+        <p class="desc">A standard protocol for connecting external systems — databases, calendars, APIs — directly to an agent. Any service that speaks MCP becomes immediately available to any tool that supports the standard.</p>
+      </div>
+
+      <div class="piece">
+        <div class="piece-id">
+          <svg class="icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <!-- lightning bolt -->
+            <path d="M19 3L8 18h11L15 29l14-17H18z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+          <span class="name">Skills</span>
+        </div>
+        <p class="desc">Reusable procedures the agent can invoke for a specific kind of task. Instead of re-explaining how to deploy or review code each time, you capture that workflow once.</p>
+      </div>
+
+    </div>
+  </div>
+  <style>
+    section[data-slide="05-six-pieces"] {
+      background: var(--uw-white);
+      padding: var(--space-5) var(--space-8) var(--space-5) calc(var(--space-10) + 8px);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="05-six-pieces"] .content {
+      max-width: 1400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    section[data-slide="05-six-pieces"] .header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    section[data-slide="05-six-pieces"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 2.5vw, 2.75rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.0;
+      color: var(--uw-spirit-purple);
+      margin: 0;
+    }
+
+    section[data-slide="05-six-pieces"] .grid {
+      display: flex;
+      flex-direction: column;
+    }
+
+    section[data-slide="05-six-pieces"] .piece {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: var(--space-6);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--uw-gray-10);
+      align-items: center;
+    }
+
+    section[data-slide="05-six-pieces"] .piece:last-child {
+      border-bottom: none;
+    }
+
+    section[data-slide="05-six-pieces"] .piece-id {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    section[data-slide="05-six-pieces"] .icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      color: var(--uw-spirit-purple);
+    }
+
+    section[data-slide="05-six-pieces"] .name {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 1.6vw, 1.75rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--uw-spirit-purple);
+      line-height: 1.1;
+    }
+
+    section[data-slide="05-six-pieces"] .desc {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.3vw, 1.625rem);
+      font-weight: 400;
+      color: var(--uw-gray-70);
+      line-height: 1.45;
+      margin: 0;
+    }
+  </style>
+</section>
+<section data-slide="06-trained-in-vs-prompt"
+         aria-label="Slide 6: Trained In vs In the Prompt"
+         class="slide">
+
+  <div class="content">
+    <div class="header">
+      <p class="slide-title">What the model knows vs. what you tell it</p>
+      <h1>Built-in knowledge <span class="vs">vs.</span> In the prompt.</h1>
+    </div>
+    <div class="columns">
+      <div class="col">
+        <p class="col-label">Built-in knowledge</p>
+        <ul>
+          <li><strong>Python and common libraries</strong> — the model has seen millions of lines of code and understands standard patterns, idioms, and APIs.</li>
+          <li><strong>General best practices</strong> — it knows how to structure a function, write a test, or refactor a loop without being told.</li>
+          <li><strong>When to stop</strong> — it has a sense of when a task is complete or when it needs more information before acting.</li>
+        </ul>
+        <p class="col-note">You don't control this — it is fixed at training time and has a knowledge cutoff date.</p>
+      </div>
+      <div class="col-divider"></div>
+      <div class="col">
+        <p class="col-label">In the prompt</p>
+        <ul>
+          <li><strong>Your data's quirks</strong> — the model has never seen your CSV headers, your variable naming conventions, or your domain vocabulary.</li>
+          <li><strong>Your lab's conventions</strong> — style guides, preferred libraries, and project structure exist nowhere in its training data.</li>
+          <li><strong>Your specific goal</strong> — what "done" looks like for this task is something only you can define.</li>
+        </ul>
+        <p class="col-note highlight">You control this. The prompt is your lever.</p>
+      </div>
+    </div>
+    <div class="footer-note">
+      <p>Most of what people call "prompt engineering" is really just learning how to fill the right side of this diagram.</p>
+    </div>
+  </div>
+
+  <style>
+    section[data-slide="06-trained-in-vs-prompt"] {
+      background: var(--uw-spirit-purple);
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-6) var(--space-10);
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"]::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .content {
+      max-width: 1300px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .slide-title {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.4vw, 1.5rem);
+      font-weight: 300;
+      color: var(--uw-husky-gold-web);
+      margin: 0;
+      text-transform: none;
+      letter-spacing: 0.02em;
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.2vw, 3.25rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--uw-white);
+      margin: 0;
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .vs {
+      color: var(--uw-spirit-gold);
+      font-weight: 400;
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .columns {
+      display: grid;
+      grid-template-columns: 1fr 2px 1fr;
+      gap: var(--space-8);
+      align-items: start;
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .col-divider {
+      background: rgba(255,199,0,0.3);
+      align-self: stretch;
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .col-label {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.1vw, 1.125rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--uw-spirit-gold);
+      margin: 0 0 var(--space-3) 0;
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--space-3) 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] li {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.5vw, 1.625rem);
+      color: var(--uw-husky-gold-web);
+      line-height: 1.5;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: rgba(255,199,0,0.4);
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] li strong {
+      color: var(--uw-white);
+      font-weight: 600;
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .col-note {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.3vw, 1.5rem);
+      color: rgba(255,255,255,0.5);
+      margin: 0;
+      font-style: italic;
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .col-note.highlight {
+      color: var(--uw-white);
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .footer-note {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: var(--space-3);
+    }
+
+    section[data-slide="06-trained-in-vs-prompt"] .footer-note p {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.4vw, 1.5rem);
+      font-weight: 400;
+      color: var(--uw-husky-gold-web);
+      line-height: 1.6;
+      margin: 0;
+      font-style: italic;
+    }
+  </style>
+</section>
+<section data-slide="07-demo-setup"
+         aria-label="Slide 7: Demo Setup"
+         class="slide">
+
+  <div class="accent-bar-left"></div>
+  <div class="content">
+    <h1>We will be refactoring a messy notebook that processes weather station data.</h1>
+    <ul>
+      <li>
+        <span class="label">What the notebook does</span>
+        <span class="detail">Load, clean, resample, forecast, and plot.</span>
+      </li>
+      <li>
+        <span class="label">Refactoring</span>
+        <span class="detail">Reorganizing working code without changing what it does — same inputs, same outputs, better shape.</span>
+      </li>
+      <li>
+        <span class="label">What we will ask the agent to do</span>
+        <span class="detail">Propose a plan, extract a module, and help us verify our code.</span>
+      </li>
+    </ul>
+  </div>
+
+  <style>
+    section[data-slide="07-demo-setup"] {
+      background: var(--uw-white);
+      padding: var(--space-8) var(--space-10) var(--space-8) calc(var(--space-12) + 8px);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="07-demo-setup"] .content {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
+    }
+
+    section[data-slide="07-demo-setup"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.0;
+      color: var(--uw-spirit-purple);
+      margin: 0;
+    }
+
+    section[data-slide="07-demo-setup"] ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    section[data-slide="07-demo-setup"] li {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: var(--space-6);
+      padding: var(--space-5) 0;
+      border-bottom: 1px solid var(--uw-gray-10);
+      align-items: baseline;
+    }
+
+    section[data-slide="07-demo-setup"] li:last-child {
+      border-bottom: none;
+    }
+
+    section[data-slide="07-demo-setup"] .label {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 1.3vw, 1.25rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--uw-spirit-purple);
+    }
+
+    section[data-slide="07-demo-setup"] .detail {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.6vw, 1.625rem);
+      font-weight: 400;
+      color: var(--uw-gray-70);
+      line-height: 1.5;
+    }
+  </style>
+</section>
+<section data-slide="08-demo-phase-1"
+         aria-label="Slide 8: Demo Phase 1 — Ask for a Plan"
+         class="slide">
+
+  <div class="accent-bar"></div>
+  <div class="content">
+    <p class="eyebrow">Step 1 · Live demo</p>
+    <h1>Asking for a Plan to Improve my Code</h1>
+
+    <div class="flowchart" aria-label="Flowchart of planning workflow">
+      <svg viewBox="0 0 900 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- ── Node 1: Set mode ── -->
+        <rect x="20" y="120" width="180" height="64" rx="8" fill="#4b2e83"/>
+        <text x="110" y="147" text-anchor="middle" font-family="'Encode Sans',sans-serif" font-weight="700" font-size="13" fill="white" text-transform="uppercase">SET MODE</text>
+        <text x="110" y="165" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="12" fill="#e8e3d3">Ask / Plan — not Agent</text>
+
+        <!-- arrow 1→2 -->
+        <line x1="200" y1="152" x2="244" y2="152" stroke="#ffc700" stroke-width="2"/>
+        <polygon points="244,147 254,152 244,157" fill="#ffc700"/>
+
+        <!-- ── Node 2: Send prompt ── -->
+        <rect x="254" y="120" width="180" height="64" rx="8" fill="#4b2e83"/>
+        <text x="344" y="147" text-anchor="middle" font-family="'Encode Sans',sans-serif" font-weight="700" font-size="13" fill="white">SEND PROMPT</text>
+        <text x="344" y="163" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="11" fill="#e8e3d3">Propose a refactor plan —</text>
+        <text x="344" y="177" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="11" fill="#e8e3d3">no code yet</text>
+
+        <!-- arrow 2→3 -->
+        <line x1="434" y1="152" x2="474" y2="152" stroke="#ffc700" stroke-width="2"/>
+        <polygon points="474,147 484,152 474,157" fill="#ffc700"/>
+
+        <!-- ── Node 3: Review plan ── -->
+        <rect x="484" y="120" width="180" height="64" rx="8" fill="#4b2e83"/>
+        <text x="574" y="147" text-anchor="middle" font-family="'Encode Sans',sans-serif" font-weight="700" font-size="13" fill="white">REVIEW PLAN</text>
+        <text x="574" y="163" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="11" fill="#e8e3d3">Check for scope creep</text>
+        <text x="574" y="177" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="11" fill="#e8e3d3">and unwanted additions</text>
+
+        <!-- arrow 3→diamond -->
+        <line x1="574" y1="184" x2="574" y2="216" stroke="#ffc700" stroke-width="2"/>
+        <polygon points="569,216 574,226 579,216" fill="#ffc700"/>
+
+        <!-- ── Decision diamond ── -->
+        <polygon points="574,226 634,263 574,300 514,263" fill="#ffc700"/>
+        <text x="574" y="258" text-anchor="middle" font-family="'Encode Sans',sans-serif" font-weight="800" font-size="13" fill="#4b2e83">Satisfied</text>
+        <text x="574" y="273" text-anchor="middle" font-family="'Encode Sans',sans-serif" font-weight="800" font-size="13" fill="#4b2e83">with plan?</text>
+
+        <!-- YES arrow → Node 4 -->
+        <line x1="634" y1="263" x2="700" y2="263" stroke="#4b2e83" stroke-width="2"/>
+        <polygon points="700,258 710,263 700,268" fill="#4b2e83"/>
+        <text x="663" y="256" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="11" font-weight="600" fill="#4b2e83">Yes</text>
+
+        <!-- ── Node 4: Approve ── -->
+        <rect x="710" y="231" width="170" height="64" rx="8" fill="#32006e"/>
+        <text x="795" y="258" text-anchor="middle" font-family="'Encode Sans',sans-serif" font-weight="700" font-size="13" fill="white">APPROVE PLAN</text>
+        <text x="795" y="275" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="11" fill="#e8e3d3">Proceed to Step 2</text>
+
+        <!-- NO arrow down then left back to Node 3 -->
+        <line x1="574" y1="300" x2="574" y2="340" stroke="#4b2e83" stroke-width="2"/>
+        <line x1="574" y1="340" x2="484" y2="340" stroke="#4b2e83" stroke-width="2"/>
+        <text x="524" y="358" text-anchor="middle" font-family="'Open Sans',sans-serif" font-size="13" font-weight="600" fill="#4b2e83">No — push back and edit the plan</text>
+        <!-- arrow back up into Node 3 bottom -->
+        <line x1="484" y1="340" x2="484" y2="184" stroke="#4b2e83" stroke-width="2"/>
+        <polygon points="479,184 484,174 489,184" fill="#4b2e83"/>
+
+      </svg>
+    </div>
+  </div>
+
+  <style>
+    section[data-slide="08-demo-phase-1"] {
+      background: var(--uw-white);
+      padding: var(--space-6) var(--space-10) var(--space-6) var(--space-12);
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="08-demo-phase-1"] .accent-bar {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="08-demo-phase-1"] .content {
+      max-width: 1300px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    section[data-slide="08-demo-phase-1"] .eyebrow {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.1vw, 1.125rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--uw-gray-50);
+      margin: 0;
+    }
+
+    section[data-slide="08-demo-phase-1"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 2.8vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.0;
+      color: var(--uw-spirit-purple);
+      margin: 0;
+    }
+
+    section[data-slide="08-demo-phase-1"] .flowchart {
+      width: 100%;
+    }
+
+    section[data-slide="08-demo-phase-1"] .flowchart svg {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</section>
+<section data-slide="09-four-surfaces"
+         aria-label="Slide 9: Four Surfaces to Shape Agent Behavior"
+         class="slide">
+
+  <div class="content">
+    <h1>Four Durable Places to Shape Agent Behavior</h1>
+    <div class="surfaces">
+      <div class="surface">
+        <p class="surface-num">01</p>
+        <p class="surface-name">Context<br>documents</p>
+        <p class="surface-desc">Always loaded on startup. Facts and conventions the agent has in hand for this project.</p>
+        <p class="surface-file">AGENTS.md</p>
+      </div>
+      <div class="surface">
+        <p class="surface-num">02</p>
+        <p class="surface-name">Skills</p>
+        <p class="surface-desc">Task-triggered procedures. The agent picks them up when the work matches.</p>
+        <p class="surface-file">skills/</p>
+      </div>
+      <div class="surface">
+        <p class="surface-num">03</p>
+        <p class="surface-name">Rules</p>
+        <p class="surface-desc">Path-scoped constraints that are hard limits, not helpful suggestions.</p>
+        <p class="surface-file">.claude/</p>
+      </div>
+      <div class="surface">
+        <p class="surface-num">04</p>
+        <p class="surface-name">Custom<br>agents</p>
+        <p class="surface-desc">Distinct personas with their own tool access. For focused, narrower jobs.</p>
+        <p class="surface-file">agents/</p>
+      </div>
+    </div>
+    <p class="coda">Taxonomy is portable across different provider's tools. The file names differ, but the concepts don't.</p>
+  </div>
+
+  <style>
+    section[data-slide="09-four-surfaces"] {
+      background: var(--uw-spirit-purple);
+      padding: var(--space-6) var(--space-10);
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="09-four-surfaces"]::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="09-four-surfaces"] .content {
+      max-width: 1400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+
+    section[data-slide="09-four-surfaces"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-white);
+      margin: 0;
+    }
+
+    section[data-slide="09-four-surfaces"] .surfaces {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+    }
+
+    section[data-slide="09-four-surfaces"] .surface {
+      background: rgba(255,255,255,0.07);
+      border-top: 3px solid var(--uw-spirit-gold);
+      padding: var(--space-4) var(--space-4);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    section[data-slide="09-four-surfaces"] .surface-num {
+      font-family: var(--font-display);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 900;
+      color: var(--uw-spirit-gold);
+      margin: 0;
+      opacity: 0.7;
+    }
+
+    section[data-slide="09-four-surfaces"] .surface-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: var(--uw-white);
+      margin: 0;
+    }
+
+    section[data-slide="09-four-surfaces"] .surface-desc {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.5vw, 1.5rem);
+      color: var(--uw-husky-gold-web);
+      line-height: 1.4;
+      margin: 0;
+      flex: 1;
+    }
+
+    section[data-slide="09-four-surfaces"] .surface-file {
+      font-family: var(--font-display-compressed);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 700;
+      color: var(--uw-spirit-gold);
+      margin: 0;
+      letter-spacing: 0.04em;
+    }
+
+    section[data-slide="09-four-surfaces"] .coda {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.5vw, 1.5rem);
+      color: rgba(232,227,211,0.7);
+      margin: 0;
+      font-style: italic;
+    }
+  </style>
+</section>
+<section data-slide="10-agents-md-live"
+         aria-label="Slide 10: AGENTS.md — Ten Lines That Change How the Agent Behaves"
+         class="slide">
+
+  <div class="accent-bar"></div>
+  <div class="content">
+    <p class="eyebrow">Live demo</p>
+    <h1>AGENTS.md —<br>ten lines that change<br>how the agent behaves.</h1>
+    <div class="lines">
+      <div class="line-row">
+        <span class="tag">What</span>
+        <span class="line-text">What this project is</span>
+      </div>
+      <div class="line-row">
+        <span class="tag">Stack</span>
+        <span class="line-text">Preferred libraries</span>
+      </div>
+      <div class="line-row highlight">
+        <span class="tag">Key</span>
+        <span class="line-text">Timestamps are UTC unless stated</span>
+      </div>
+      <div class="line-row highlight">
+        <span class="tag">Key</span>
+        <span class="line-text">Don't add type hints unless asked</span>
+      </div>
+      <div class="line-row">
+        <span class="tag">Why</span>
+        <span class="line-text">Version-controlled — team asset, not personal preference</span>
+      </div>
+      <div class="line-row">
+        <span class="tag">Why</span>
+        <span class="line-text">Cross-vendor — the file travels with the code</span>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    section[data-slide="10-agents-md-live"] {
+      background: var(--uw-white);
+      padding: var(--space-8) var(--space-10) var(--space-8) var(--space-12);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="10-agents-md-live"] .accent-bar {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="10-agents-md-live"] .content {
+      max-width: 1300px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto 1fr;
+      column-gap: var(--space-10);
+      row-gap: var(--space-3);
+    }
+
+    section[data-slide="10-agents-md-live"] .eyebrow {
+      grid-column: 1;
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--uw-gray-70);
+      margin: 0;
+    }
+
+    section[data-slide="10-agents-md-live"] h1 {
+      grid-column: 1;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-spirit-purple);
+      margin: 0;
+    }
+
+    section[data-slide="10-agents-md-live"] .lines {
+      grid-column: 2;
+      grid-row: 1 / 4;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    section[data-slide="10-agents-md-live"] .line-row {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-3);
+      padding: var(--space-2) var(--space-3);
+      border-left: 3px solid var(--uw-gray-10);
+    }
+
+    section[data-slide="10-agents-md-live"] .line-row.highlight {
+      border-left-color: var(--uw-spirit-gold);
+      background: #fafaf0;
+    }
+
+    section[data-slide="10-agents-md-live"] .tag {
+      font-family: var(--font-display);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--uw-gray-70);
+      min-width: 3.5rem;
+      flex-shrink: 0;
+    }
+
+    section[data-slide="10-agents-md-live"] .line-row.highlight .tag {
+      color: var(--uw-heritage-gold);
+    }
+
+    section[data-slide="10-agents-md-live"] .line-text {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.7vw, 1.75rem);
+      color: var(--uw-gray-90);
+      line-height: 1.35;
+    }
+
+    section[data-slide="10-agents-md-live"] .line-row.highlight .line-text {
+      color: var(--uw-spirit-purple);
+      font-weight: 600;
+    }
+  </style>
+</section>
+<section data-slide="11-act2-recap"
+         aria-label="Slide 11: Act 2 Recap"
+         class="slide">
+
+  <div class="accent-bar"></div>
+  <div class="content">
+    <p class="eyebrow">What just happened</p>
+    <h1>The agent read your files,<br>followed your plan,<br>and edited your code.</h1>
+    <div class="beats">
+      <div class="beat">
+        <span class="beat-num">01</span>
+        <p class="beat-text">We switched to agent mode, prompted it to extract the cleaning logic into a module, and it did exactly that.</p>
+      </div>
+      <div class="beat">
+        <span class="beat-num">02</span>
+        <p class="beat-text">The chat tells you what the agent claims it changed. The diff is where you confirm it.</p>
+      </div>
+      <div class="beat beat--bridge">
+        <span class="beat-num">03</span>
+        <p class="beat-text">The code looks right. But we should verify it to be sure.</p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    section[data-slide="11-act2-recap"] {
+      background: var(--uw-white);
+      padding: var(--space-8) var(--space-10) var(--space-8) var(--space-12);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="11-act2-recap"] .accent-bar {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="11-act2-recap"] .content {
+      max-width: 1300px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    section[data-slide="11-act2-recap"] .eyebrow {
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--uw-gray-70);
+      margin: 0;
+    }
+
+    section[data-slide="11-act2-recap"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-spirit-purple);
+      margin: 0;
+    }
+
+    section[data-slide="11-act2-recap"] .beats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-2);
+    }
+
+    section[data-slide="11-act2-recap"] .beat {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      padding: var(--space-4);
+      border-top: 3px solid var(--uw-gray-10);
+    }
+
+    section[data-slide="11-act2-recap"] .beat--bridge {
+      border-top-color: var(--uw-spirit-gold);
+      background: #fafaf0;
+    }
+
+    section[data-slide="11-act2-recap"] .beat-num {
+      font-family: var(--font-display);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 900;
+      color: var(--uw-gray-30);
+      letter-spacing: 0.06em;
+    }
+
+    section[data-slide="11-act2-recap"] .beat--bridge .beat-num {
+      color: var(--uw-heritage-gold);
+    }
+
+    section[data-slide="11-act2-recap"] .beat-text {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.6vw, 1.625rem);
+      color: var(--uw-gray-90);
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    section[data-slide="11-act2-recap"] .beat--bridge .beat-text {
+      color: var(--uw-spirit-purple);
+      font-weight: 600;
+    }
+  </style>
+</section>
+<section data-slide="12-bug-in-code"
+         aria-label="Slide 12: Bug in Code"
+         class="slide">
+
+  <div class="accent-bar"></div>
+  <div class="content">
+    <p class="eyebrow">What just happened</p>
+    <h1>The agent preserved<br>the bug faithfully.</h1>
+    <ul class="bullets">
+      <li>The bug was in the original notebook. The refactor moved the pandas operations verbatim. It didn't introduce it, but it also didn't catch it.</li>
+      <li>Summary statistics were unaffected. Only your domain-informed look at the diurnal plot surfaced it.</li>
+      <li>The AGENTS.md convention we wrote earlier (timestamps are UTC) helped the agent find the fix quickly.</li>
+      <li class="anchor">This is the shape of the collaboration: the agent handles the code and you handle the domain.</li>
+    </ul>
+  </div>
+
+  <style>
+    section[data-slide="12-bug-in-code"] {
+      background: var(--uw-white);
+      padding: var(--space-8) var(--space-10) var(--space-8) var(--space-12);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="12-bug-in-code"] .accent-bar {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="12-bug-in-code"] .content {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    section[data-slide="12-bug-in-code"] .eyebrow {
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--uw-gray-70);
+      margin: 0;
+    }
+
+    section[data-slide="12-bug-in-code"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-spirit-purple);
+      margin: 0;
+    }
+
+    section[data-slide="12-bug-in-code"] .bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    section[data-slide="12-bug-in-code"] .bullets li {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.7vw, 1.75rem);
+      color: var(--uw-gray-90);
+      line-height: 1.5;
+      padding-left: 2rem;
+      position: relative;
+    }
+
+    section[data-slide="12-bug-in-code"] .bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--uw-gray-30);
+    }
+
+    section[data-slide="12-bug-in-code"] .bullets li.anchor {
+      color: var(--uw-spirit-purple);
+      font-weight: 600;
+      border-left: 4px solid var(--uw-spirit-gold);
+      padding-left: calc(2rem - 4px);
+      margin-top: var(--space-2);
+    }
+
+    section[data-slide="12-bug-in-code"] .bullets li.anchor::before {
+      content: none;
+    }
+  </style>
+</section>
+<section data-slide="13-plausible-code"
+         aria-label="Slide 13: Plausible Code"
+         class="slide">
+
+  <div class="accent-bar"></div>
+  <div class="content">
+    <p class="eyebrow">Act 3 — Verification</p>
+    <h1>Why do we need<br>to verify our code?</h1>
+    <ul class="bullets">
+      <li>This is not a question of whether the agent is trustworthy. It generally produces plausible, working code.</li>
+      <li>However, the agent does not know the specifics of your data: its quirks, its edge cases, its domain context.</li>
+      <li>It also lacks the scientific domain knowledge you bring as a researcher. It cannot judge whether a result is physically reasonable or scientifically meaningful.</li>
+      <li class="anchor">We regard verification as a core responsibility of the human researcher.</li>
+    </ul>
+  </div>
+
+  <style>
+    section[data-slide="13-plausible-code"] {
+      background: var(--uw-white);
+      padding: var(--space-8) var(--space-10) var(--space-8) var(--space-12);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="13-plausible-code"] .accent-bar {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="13-plausible-code"] .content {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    section[data-slide="13-plausible-code"] .eyebrow {
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--uw-gray-70);
+      margin: 0;
+    }
+
+    section[data-slide="13-plausible-code"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-spirit-purple);
+      margin: 0;
+    }
+
+    section[data-slide="13-plausible-code"] .bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    section[data-slide="13-plausible-code"] .bullets li {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.7vw, 1.75rem);
+      color: var(--uw-gray-90);
+      line-height: 1.5;
+      padding-left: 2rem;
+      position: relative;
+    }
+
+    section[data-slide="13-plausible-code"] .bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--uw-gray-30);
+    }
+
+    section[data-slide="13-plausible-code"] .bullets li.anchor {
+      color: var(--uw-spirit-purple);
+      font-weight: 600;
+      padding-left: 2rem;
+      border-left: 4px solid var(--uw-spirit-gold);
+      padding-left: calc(2rem - 4px);
+      margin-top: var(--space-2);
+    }
+
+    section[data-slide="13-plausible-code"] .bullets li.anchor::before {
+      content: none;
+    }
+  </style>
+</section>
+<section data-slide="14-verification-practices"
+         aria-label="Slide 14: Verification Practices"
+         class="slide">
+
+  <div class="accent-bar"></div>
+  <div class="content">
+    <p class="eyebrow">Verification</p>
+    <h1>There are multiple approaches.<br>Today we used two.</h1>
+    <ul class="bullets">
+      <li><strong>Read the diff, not the chat.</strong> The chat tells you what the agent claims it changed. The diff is where you confirm it.</li>
+      <li><strong>Push back.</strong> The agent is a coworker, not an oracle. "No, you're in the wrong mode" and "no, you did more than I asked" are both valid pushback. Half of what looks like the agent going rogue is a permissions or scope problem.</li>
+    </ul>
+    <p class="coda">There are more advanced patterns — evals, test-first workflows, structured uncertainty flagging. The handout has starting points if you want to go deeper.</p>
+  </div>
+
+  <style>
+    section[data-slide="14-verification-practices"] {
+      background: var(--uw-white);
+      padding: var(--space-8) var(--space-10) var(--space-8) var(--space-12);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="14-verification-practices"] .accent-bar {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="14-verification-practices"] .content {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+
+    section[data-slide="14-verification-practices"] .eyebrow {
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--uw-gray-70);
+      margin: 0;
+    }
+
+    section[data-slide="14-verification-practices"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-spirit-purple);
+      margin: 0;
+    }
+
+    section[data-slide="14-verification-practices"] .bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    section[data-slide="14-verification-practices"] .bullets li {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.7vw, 1.75rem);
+      color: var(--uw-gray-90);
+      line-height: 1.5;
+      padding-left: 2rem;
+      position: relative;
+    }
+
+    section[data-slide="14-verification-practices"] .bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--uw-gray-30);
+    }
+
+    section[data-slide="14-verification-practices"] .bullets li strong {
+      color: var(--uw-spirit-purple);
+    }
+
+    section[data-slide="14-verification-practices"] .coda {
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.5rem);
+      color: var(--uw-gray-60);
+      line-height: 1.5;
+      font-style: italic;
+      border-top: 1px solid var(--uw-gray-10);
+      padding-top: var(--space-4);
+      margin: 0;
+    }
+  </style>
+</section>
+<section data-slide="15-reproducibility"
+         aria-label="Slide 15: Reproducibility"
+         class="slide">
+
+  <div class="accent-bar"></div>
+  <div class="content">
+    <p class="eyebrow">Reproducibility</p>
+    <h1>The conversation is scaffolding.<br>The artifact is the science.</h1>
+    <ul class="bullets">
+      <li>LLMs are stochastic; science demands reproducibility. That tension is real.</li>
+      <li>The resolution: the process is not reproducible, however the artifacts are.</li>
+      <li>Your git repo — not your chat log — is the record.</li>
+      <li>You can commit plans, review notes, and validation outputs alongside code. <code>git log docs/</code> reads like a lab notebook.</li>
+      <li>Log the model, version, and date in your methods section, the way you would cite any tool.</li>
+      <li class="anchor">Pin your dependencies. AI-generated code often assumes packages it did not declare.</li>
+    </ul>
+  </div>
+
+  <style>
+    section[data-slide="15-reproducibility"] {
+      background: var(--uw-white);
+      padding: var(--space-8) var(--space-10) var(--space-8) var(--space-12);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="15-reproducibility"] .accent-bar {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="15-reproducibility"] .content {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    section[data-slide="15-reproducibility"] .eyebrow {
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--uw-gray-70);
+      margin: 0;
+    }
+
+    section[data-slide="15-reproducibility"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-spirit-purple);
+      margin: 0;
+    }
+
+    section[data-slide="15-reproducibility"] .bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    section[data-slide="15-reproducibility"] .bullets li {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.6vw, 1.625rem);
+      color: var(--uw-gray-90);
+      line-height: 1.5;
+      padding-left: 2rem;
+      position: relative;
+    }
+
+    section[data-slide="15-reproducibility"] .bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--uw-gray-30);
+    }
+
+    section[data-slide="15-reproducibility"] .bullets li.anchor {
+      color: var(--uw-spirit-purple);
+      font-weight: 600;
+      border-left: 4px solid var(--uw-spirit-gold);
+      padding-left: calc(2rem - 4px);
+      margin-top: var(--space-2);
+    }
+
+    section[data-slide="15-reproducibility"] .bullets li.anchor::before {
+      content: none;
+    }
+
+    section[data-slide="15-reproducibility"] code {
+      font-family: var(--font-mono, monospace);
+      font-size: 0.9em;
+      background: rgba(0, 0, 0, 0.06);
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      color: var(--uw-spirit-purple);
+    }
+  </style>
+</section>
+<section data-slide="16-where-to-go-next"
+         aria-label="Slide 16: Where to Go Next"
+         class="slide">
+
+  <div class="content">
+    <p class="eyebrow">Your next step</p>
+    <h1>Write an AGENTS.md<br>for one of your own<br>projects. This week.</h1>
+    <ul class="steps">
+      <li>Pick a project you are actively working on.</li>
+      <li>Ten lines is enough — conventions, preferences, what not to do.</li>
+      <li>Commit it to the repo so it travels with the code.</li>
+      <li>Then use an agent on that project once, and notice what changed.</li>
+    </ul>
+  </div>
+
+  <style>
+    section[data-slide="16-where-to-go-next"] {
+      background: var(--uw-spirit-purple);
+      padding: var(--space-8) var(--space-16) var(--space-8) var(--space-16);
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section[data-slide="16-where-to-go-next"]::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 8px;
+      background: var(--uw-spirit-gold);
+    }
+
+    section[data-slide="16-where-to-go-next"] .content {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+
+    section[data-slide="16-where-to-go-next"] .eyebrow {
+      font-family: var(--font-body);
+      font-size: clamp(1.375rem, 1.4vw, 1.375rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--uw-husky-gold-web);
+      margin: 0;
+      opacity: 0.8;
+    }
+
+    section[data-slide="16-where-to-go-next"] h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--uw-white);
+      margin: 0;
+    }
+
+    section[data-slide="16-where-to-go-next"] .steps {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      border-top: 1px solid rgba(255, 199, 0, 0.3);
+      padding-top: var(--space-5);
+      counter-reset: step-counter;
+    }
+
+    section[data-slide="16-where-to-go-next"] .steps li {
+      counter-increment: step-counter;
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 1.7vw, 1.75rem);
+      color: var(--uw-husky-gold-web);
+      line-height: 1.5;
+      padding-left: 3rem;
+      position: relative;
+    }
+
+    section[data-slide="16-where-to-go-next"] .steps li::before {
+      content: counter(step-counter, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1vw, 1rem);
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      color: rgba(255, 199, 0, 0.5);
+      top: 0.35em;
+    }
+  </style>
+</section>
+
+  <!-- Slide counter -->
+  <div class="slide-counter" aria-live="polite" aria-atomic="true">
+    <span id="current-slide">1</span> / <span id="total-slides">0</span>
+  </div>
+
+  <style>
+    .slide-counter {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      font-family: var(--font-body);
+      font-size: 18px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 8px 16px;
+      border-radius: 4px;
+      z-index: 1000;
+      pointer-events: none;
+    }
+  </style>
+
+  <script>
+    // Slide navigation system
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(n) {
+      // Remove active class from all slides
+      slides.forEach(slide => slide.classList.remove('active'));
+
+      // Clamp to valid range
+      currentSlide = Math.max(0, Math.min(n, totalSlides - 1));
+
+      // Show current slide
+      slides[currentSlide].classList.add('active');
+
+      // Update counter
+      document.getElementById('current-slide').textContent = currentSlide + 1;
+
+      // Update URL hash
+      window.location.hash = currentSlide + 1;
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        showSlide(currentSlide + 1);
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        showSlide(currentSlide - 1);
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        showSlide(0);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        showSlide(totalSlides - 1);
+      }
+    });
+
+    // Click to advance (anywhere except the counter)
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.slide-counter')) {
+        showSlide(currentSlide + 1);
+      }
+    });
+
+    // Initialize presentation
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set total slides
+      document.getElementById('total-slides').textContent = totalSlides;
+
+      // Load from hash if present
+      if (window.location.hash) {
+        const hashSlide = parseInt(window.location.hash.slice(1)) - 1;
+        if (!isNaN(hashSlide) && hashSlide >= 0 && hashSlide < totalSlides) {
+          showSlide(hashSlide);
+          return;
+        }
+      }
+
+      // Otherwise show first slide
+      showSlide(0);
+    });
+
+    // Handle browser back/forward buttons
+    window.addEventListener('hashchange', () => {
+      const hashSlide = parseInt(window.location.hash.slice(1)) - 1;
+      if (!isNaN(hashSlide) && hashSlide >= 0 && hashSlide < totalSlides) {
+        // Update without creating new history entry
+        slides.forEach(slide => slide.classList.remove('active'));
+        currentSlide = hashSlide;
+        slides[currentSlide].classList.add('active');
+        document.getElementById('current-slide').textContent = currentSlide + 1;
+      }
+    });
+  </script>
+</body>
+</html>
