@@ -1,0 +1,1 @@
+This is a repository that contains two main components of Activity: One is a slide deck, and another is a demo for a tutorial. If you see instructions for building slides, go to the slide deck folder and read the agents.md file there for further instructions. 
